@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "assets/css/CheckOut.css";
-import { Button } from "reactstrap";
+import { Button, Row, Card, Col, CardFooter, CardBody } from "reactstrap";
 import PopupDom from "./PopupDom";
 import PopupPostCode from "./PopupPostCode";
 import { useHistory } from "react-router-dom";
@@ -65,14 +65,6 @@ function CheckOut() {
     history.push("/Product");
   }
 
-  // useEffect(function last() {
-  //   if (localStorage.getItem("id") == undefined) {
-  //     alert("로그인 해주세요");
-  //   } else {
-  //     onClickPayment();
-  //   }
-  // });
-
   function last() {
     if (localStorage.getItem("id") == undefined) {
       alert("로그인이 필요합니다.");
@@ -97,68 +89,86 @@ function CheckOut() {
           <br />
           <br />
         </div>
-        <form
-          className="register-form"
-          action="http://localhost:3007/CheckOut"
-          method="post"
-        >
-          <span className="글자크기">수령인</span>
-          <input
-            type="text"
-            placeholder={"수령인을 입력해주세요"}
-            name="o_mem"
-            style={{
-              width: "600px",
-              height: "70px",
-              fontSize: "30px",
-            }}
-          />
-          <span className="글자크기">전화번호</span>
-          <input
-            type="text"
-            placeholder={"전화번호를 입력해주세요"}
-            name="o_tel"
-            style={{
-              width: "600px",
-              height: "70px",
-              fontSize: "30px",
-            }}
-          />
-          <span className="글자크기">배송지</span>
-          <input
-            type="text"
-            placeholder={"배송지를 입력해주세요"}
-            onClick={openPostCode}
-            value={addr}
-            name="o_adr"
-            style={{
-              width: "600px",
-              height: "70px",
-              fontSize: "30px",
-            }}
-          />
-          <br />
-          <input
-            type="text"
-            placeholder={"상세주소를 입력해주세요"}
-            name="o_adr2"
-            style={{
-              width: "600px",
-              height: "70px",
-              fontSize: "30px",
-            }}
-          />
-          <Button className="CBtn" type="submit">
-            입력완료
-          </Button>
-          <div id="popupDom">
-            {isPopupOpen && (
-              <PopupDom>
-                <PopupPostCode onClose={closePostCode} end={setAddr} />
-              </PopupDom>
-            )}
-          </div>
-        </form>
+        <Row>
+          <Col className="ml-auto mr-auto" md="4">
+            <Card className="card-profile card-plain">
+              <div>
+                <img src={require("assets/img/택배1.jpg")} />
+              </div>
+
+              <form
+                className="register-form"
+                action="http://localhost:3007/CheckOut"
+                method="post"
+              >
+                <span className="글자크기">수령인</span>
+
+                <input
+                  type="text"
+                  placeholder={"수령인을 입력해주세요"}
+                  name="o_mem"
+                  style={{
+                    width: "600px",
+                    height: "70px",
+                    fontSize: "30px",
+                    textAlign: "center",
+                  }}
+                />
+                <br />
+                <span className="글자크기">전화번호</span>
+                <input
+                  type="text"
+                  placeholder={"전화번호를 입력해주세요"}
+                  name="o_tel"
+                  style={{
+                    width: "600px",
+                    height: "70px",
+                    fontSize: "30px",
+                    textAlign: "center",
+                  }}
+                />
+                <br />
+                <span className="글자크기">배송지</span>
+                <input
+                  type="text"
+                  placeholder={"배송지를 입력해주세요"}
+                  onClick={openPostCode}
+                  value={addr}
+                  name="o_adr"
+                  style={{
+                    width: "600px",
+                    height: "70px",
+                    fontSize: "30px",
+                    textAlign: "center",
+                  }}
+                />
+                <br />
+                <input
+                  type="text"
+                  placeholder={"상세주소를 입력해주세요"}
+                  name="o_adr2"
+                  style={{
+                    width: "600px",
+                    height: "70px",
+                    fontSize: "30px",
+                    // marginLeft: "600px",
+                    textAlign: "center",
+                  }}
+                />
+                <Button className="CBtn" type="submit">
+                  입력완료
+                </Button>
+                <div id="popupDom">
+                  {isPopupOpen && (
+                    <PopupDom>
+                      <PopupPostCode onClose={closePostCode} end={setAddr} />
+                    </PopupDom>
+                  )}
+                </div>
+              </form>
+            </Card>
+          </Col>
+        </Row>
       </div>
       <body>
         <section className="cart">
