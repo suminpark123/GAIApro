@@ -79,7 +79,7 @@ router.post("/alll", function (req, res) {
 
 // 리뷰
 router.post("/review", function (request, response) {
-  console.log("회원가입 라우터");
+  console.log("리뷰 라우터1");
 
   let id = request.body.id;
   let review = request.body.review;
@@ -91,7 +91,7 @@ router.post("/review", function (request, response) {
 
   //db sql문
   let sql = "insert into tbl_review values(?,?,?)"; //?값으로 대체
-  conn.query(sql, function (err, rows) {
+  conn.query(sql, [suproduct, id, review], function (err, rows) {
     if (!err) {
       console.log("리뷰디비성공");
     } else {
@@ -104,6 +104,61 @@ router.post("/review", function (request, response) {
   });
   // 추가
 });
+
+router.post("/review2", function (req, res) {
+  console.log("리뷰라우터2");
+
+  //db sql문
+  let sql = "select p_id from tbl_review"; //?값으로 대체
+  conn.query(sql, function (err, rows) {
+    if (!err) {
+      //만약 에러가 안났으면
+      console.log("검색성공");
+      // console.log(rows);
+      res.json({ result: rows });
+      res.end();
+    } else {
+      console.log("검색실패" + err);
+    }
+  });
+});
+
+router.post("/review3", function (req, res) {
+  console.log("리뷰라우터3");
+  let suproduct = req.body.suproduct;
+
+  //db sql문
+  let sql = "select * from tbl_review"; //?값으로 대체
+  conn.query(sql, function (err, rows) {
+    if (!err) {
+      //만약 에러가 안났으면
+      console.log("검색성공");
+      console.log(rows);
+      res.json({ result: rows });
+      res.end();
+    } else {
+      console.log("검색실패" + err);
+    }
+  });
+});
+
+// router.post("/review4", function (req, res) {
+//   console.log("리뷰라우터3");
+
+//   //db sql문
+//   let sql = "select * from tbl_review where p_id=?"; //?값으로 대체
+//   conn.query(sql,[], function (err, rows) {
+//     if (!err) {
+//       //만약 에러가 안났으면
+//       console.log("검색성공");
+//       console.log(rows);
+//       res.json({ result: rows });
+//       res.end();
+//     } else {
+//       console.log("검색실패" + err);
+//     }
+//   });
+// });
 
 router.post("/alll2", function (req, res) {
   console.log("올라우터");
