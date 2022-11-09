@@ -95,6 +95,25 @@ router.post("/alll2", function (req, res) {
   });
 });
 
+// 찬익 주문배송
+router.post("/alll3", function (req, res) {
+  console.log("올라우터");
+
+  //db sql문
+  let sql = "select * from "; //?값으로 대체
+  conn.query(sql, function (err, rows) {
+    if (!err) {
+      //만약 에러가 안났으면
+      console.log("검색성공");
+      console.log(rows);
+      res.json({ result: rows });
+      res.end();
+    } else {
+      console.log("검색실패" + err);
+    }
+  });
+});
+
 //로그인
 router.post("/login-page", function (request, res) {
   console.log("로그인 라우터");
