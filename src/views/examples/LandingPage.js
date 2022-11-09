@@ -186,7 +186,8 @@ function LandingPage() {
                   <CardBody>
                     <br />
                     <p>
-                      <b>
+                      <b style={{fontSize:"20px", margin:"auto",letterSpacing:"1px"}}>
+                       
                         안녕하세요 GAIA의 팀장 박수민입니다. 지구 온난화로 인한
                         광범위한 변화와 생태계 파괴, 그리고 대다수 기업들의
                         비즈니스가 환경 문제의 일부임을 알게 된 후부터 저희
