@@ -6,7 +6,7 @@ function SectionCarousel() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src={require("assets/img/사진1.jpg")}
+          src={require("assets/img/환경오염.jpg")}
           alt="First slide"
         />
         <Carousel.Caption>
@@ -15,7 +15,7 @@ function SectionCarousel() {
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <img
+        <img 
           className="d-block w-100"
           src={require("assets/img/antoine-barres.jpg")}
           alt="Second slide"
