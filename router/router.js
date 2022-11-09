@@ -100,7 +100,7 @@ router.post("/alll3", function (req, res) {
   console.log("올라우터");
 
   //db sql문
-  let sql = "select * from "; //?값으로 대체
+  let sql = "select * from tbl_delivery"; //?값으로 대체
   conn.query(sql, function (err, rows) {
     if (!err) {
       //만약 에러가 안났으면
