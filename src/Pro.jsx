@@ -5,10 +5,10 @@ import Product from "./pages/product";
 import Basket from "./pages/basket";
 import Index from "views/Index.js";
 import NucleoIcons from "views/NucleoIcons.js";
-import LandingPage from "views/examples/LandingPage.js";
+import LandingPage from "views/examples/Process.js";
 import ProfilePage from "views/examples/ProfilePage.js";
-import LandingPage2 from "views/examples/LandingPage2";
-import LandingPage3 from "views/examples/LandingPage3";
+import LandingPage2 from "views/examples/Recycling";
+import LandingPage3 from "views/examples/Partner";
 import LandingPage4 from "views/examples/LandingPage4";
 import RegisterP from "views/examples/회원가입페이지";
 import LoginP from "views/examples/로그인페이지";
@@ -67,16 +67,13 @@ function Pro() {
           path="/nucleo-icons"
           render={(props) => <NucleoIcons {...props} />}
         />
+        <Route path="/Process" render={(props) => <LandingPage {...props} />} />
         <Route
-          path="/landing-page"
-          render={(props) => <LandingPage {...props} />}
-        />
-        <Route
-          path="/landing-page2"
+          path="/Recycling"
           render={(props) => <LandingPage2 {...props} />}
         />
         <Route
-          path="/landing-page3"
+          path="/Partner"
           render={(props) => <LandingPage3 {...props} />}
         />
         <Route

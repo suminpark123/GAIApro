@@ -175,26 +175,26 @@ function ExamplesNavbarGoods(cart) {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink to="/landing-page" tag={Link}>
+              <NavLink to="/Process" tag={Link}>
                 <i className="nc-icon nc-layout-11" /> ECO & PROCESS
               </NavLink>
             </NavItem>
             {/* 추가2 */}
             <NavItem>
-              <NavLink to="/landing-page2" tag={Link}>
+              <NavLink to="/Recycling" tag={Link}>
                 <i className="nc-icon nc-layout-11" /> RECYCLING
               </NavLink>
             </NavItem>
             {/* 추가2끝 */}
             {/* 추가3 */}
             <NavItem>
-              <NavLink to="/landing-page3" tag={Link}>
+              <NavLink to="/Partner" tag={Link}>
                 <i className="nc-icon nc-layout-11" /> PARTNER
               </NavLink>
             </NavItem>
             <NavItem>
               <NavLink to="/Product" tag={Link}>
-                <i className="nc-icon nc-layout-11"  /> Product
+                <i className="nc-icon nc-layout-11" /> Product
               </NavLink>
             </NavItem>
             {/* 추가3완료 */}
