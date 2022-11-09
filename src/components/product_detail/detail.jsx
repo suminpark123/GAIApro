@@ -5,6 +5,7 @@ import { getProducts } from "../../service/fetcher";
 import { useHistory } from "react-router-dom";
 import { useRef } from "react";
 import { useCallback } from "react";
+import axios from "axios";
 
 export const Detail = ({ convertPrice, cart, setCart }) => {
   const { id } = useParams();
@@ -68,6 +69,42 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
   function back() {
     history.push("/Product");
   }
+
+  const [resu, setResu] = useState([]);
+
+  // 추가
+  const handleReview = (e) => {
+    let test = "";
+    // form태그가 다른 페이지로 이동시키지 않도록 방지
+    e.preventDefault();
+    console.log("handleLogin!");
+    //console.log(document.getElementById("userId").value + "test");
+    //axios.post(보낼위치, 보낼데이터)
+
+    getProducts().then((data) => {
+      console.log(data);
+      console.log("상품의 id값:" + parseInt(id));
+      setResu(data.data.products);
+      //test = data.data.products[0].id;
+    });
+
+    axios
+      .post("http://localhost:3007/review", {
+        review: document.getElementById("userReview").value,
+        id: localStorage.getItem("id"),
+        suproduct: parseInt(id),
+      })
+      .then((result) => {
+        //console.log("데이터셩공", result.data.result);
+        console.log("액시오스성공", result.data.result);
+        localStorage.setItem("id", result.data.result);
+        // setName(result.data.id + "님 환영");
+      })
+      .catch(() => {
+        console.log("데이터실패");
+      });
+  };
+
   return (
     product && (
       <>
@@ -161,11 +198,7 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
         </main>
         <div style={{ height: "200px" }}></div>
         {/* 추가 */}
-        <form
-          className="register-form"
-          action="http://localhost:3007/CheckOut"
-          method="post"
-        >
+        <form className="register-form" onSubmit={handleReview}>
           <div
             style={{
               display: "flex",
@@ -178,8 +211,9 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
               cols="70"
               rows="5"
               placeholder="입력하세요"
-              name="review"
+              id="userReview"
             ></textarea>
+            <button type="submit">제출</button>
           </div>
         </form>
       </>

@@ -350,28 +350,40 @@ export default class SimpleSlider extends Component {
                 <Col md="10">
                   <Card className="card-profile card-plain">
                     <CardBody>
-                      <h3>OUR MISSION & VISION</h3>
+                      <h3>
+                        <b>OUR MISSION & VISION</b>
+                      </h3>
                       <br />
                       <h3 class="Sub">
                         <p>
-                          지속가능 개발 목표 또는 지속가능 발전 목표 Sustainable
-                          Development Goals SDGs는
+                          <b>
+                            지속가능 개발 목표 또는 지속가능 발전 목표
+                            Sustainable Development Goals SDGs는
+                          </b>
                         </p>
                         <p>
-                          인류문제 사회문제 지구환경 및 기후변화 문제 경제 문제
-                          등 우리가 직 간접적으로 직면한
+                          <b>
+                            인류문제 사회문제 지구환경 및 기후변화 문제 경제
+                            문제 등 우리가 직 간접적으로 직면한
+                          </b>
                         </p>
                         <p>
-                          문제들을 2030년까지 해결하기 위해 유엔과 국제사회가
-                          함께 제정한 17가지 주요 공동목표입니다
+                          <b>
+                            문제들을 2030년까지 해결하기 위해 유엔과 국제사회가
+                            함께 제정한 17가지 주요 공동목표입니다
+                          </b>
                         </p>
                         <p>
-                          GAIA는지속가능한 생산과 소비가 가능하도록 플랫폼
-                          역할을 수행하며 지구환경 개선에 기여하고자
+                          <b>
+                            GAIA는지속가능한 생산과 소비가 가능하도록 플랫폼
+                            역할을 수행하며 지구환경 개선에 기여하고자
+                          </b>
                         </p>
                         <p>
-                          합니다 GAIA의 이러한 노력이 지구의 지속가능 성장을
-                          위해 보탬이 되면 좋겠습니다.
+                          <b>
+                            합니다 GAIA의 이러한 노력이 지구의 지속가능 성장을
+                            위해 보탬이 되면 좋겠습니다.
+                          </b>
                         </p>
                       </h3>
                     </CardBody>

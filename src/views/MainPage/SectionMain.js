@@ -13,7 +13,10 @@ function Main1() {
       <Col md="4">
         <Card className="card-profile card-plain">
           <CardBody>
-            <img src={require("assets/img/E.png")} />
+            <img
+              src={require("assets/img/E.png")}
+              style={{ height: "230px" }}
+            />
           </CardBody>
           <CardFooter className="text-center"></CardFooter>
         </Card>
@@ -22,32 +25,49 @@ function Main1() {
         <Card className="card-profile card-plain">
           <CardBody>
             <div>
-              <span className="title">업사이클링 소재를 활용하는 GAIA</span>
+              <span className="title" style={{ fontSize: "25px" }}>
+                <b>업사이클링 소재를 활용하는 GAIA</b>
+              </span>
               <br />
               <div style={{ textAlign: "left" }}>
                 <h3 className="Sub">
                   <p>
-                    가이아에서 판매되는 모든 제품은 버려지는 재활용 제품들을 쓸
-                    수 있는
+                    <b>
+                      {" "}
+                      가이아에서 판매되는 모든 제품은 버려지는 재활용 제품들을
+                      쓸 수 있는
+                    </b>
                   </p>
                   <p>
-                    제품으로 탈바꿈시키는 업사이클링 이라는 기술을 통해서 생산이
-                    됩니다
+                    <b>
+                      제품으로 탈바꿈시키는 업사이클링 이라는 기술을 통해서
+                      생산이 됩니다
+                    </b>
                   </p>
                   <p>
-                    현재 판매중인 제품들의 소재는 매립 및 소각으로 인해 환경에
-                    심각한
+                    <b>
+                      현재 판매중인 제품들의 소재는 매립 및 소각으로 인해 환경에
+                      심각한
+                    </b>
                   </p>
                   <p>
-                    오염을 일으키는 플라스틱 폐비닐등이 이용됩니다. 이러한
-                    소재들을{" "}
+                    <b>
+                      오염을 일으키는 플라스틱 폐비닐등이 이용됩니다. 이러한
+                      소재들을{" "}
+                    </b>
                   </p>
                   <p>
-                    활용함으로써 환경오염을 획기적으로 줄이고 제품을 구매하는
-                    고객들로
+                    <b>
+                      활용함으로써 환경오염을 획기적으로 줄이고 제품을 구매하는
+                      고객들로
+                    </b>
                   </p>
-                  <p>하여금 환경 보호에 관심을 가지게 만드는게 가이아의</p>
-                  <p>ENVIROMENTAL 경영철학입니다.</p>
+                  <p>
+                    <b>하여금 환경 보호에 관심을 가지게 만드는게 가이아의</b>
+                  </p>
+                  <p>
+                    <b>ENVIROMENTAL 경영철학입니다.</b>
+                  </p>
                 </h3>
               </div>
             </div>
@@ -67,36 +87,48 @@ function Main1() {
       <Col md="6">
         <Card className="card-profile card-plain">
           <CardBody>
-            <span className="title" style={{ marginLeft: "150px" }}>
-              협력업체와 친환경 동반성장하는 GAIA
+            <span className="title" style={{ fontSize: "25px" }}>
+              <b>협력업체와 친환경 동반성장하는 GAIA</b>
             </span>
             <br />
             <br />
             <div style={{ textAlign: "left" }}>
               <h3 className="Sub">
                 <p>
-                  GAIA는 환경문제 해결을 위해 노력하는 브랜드들과 협업하여
-                  가치있는 소비
+                  <b>
+                    GAIA는 환경문제 해결을 위해 노력하는 브랜드들과 협업하여
+                    가치있는 소비
+                  </b>
                 </p>
                 <p>
-                  방식을 제안하며 각 브랜드의 업사이클링 소재와 제품에 대해
-                  소개하는 공간을
+                  <b>
+                    방식을 제안하며 각 브랜드의 업사이클링 소재와 제품에 대해
+                    소개하는 공간을
+                  </b>
                 </p>
                 <p>
-                  만들어나갑니다. 온라인 편집샵을 통해 50여개의 브랜드들과
-                  200여개의 제품을
+                  <b>
+                    만들어나갑니다. 온라인 편집샵을 통해 50여개의 브랜드들과
+                    200여개의 제품을
+                  </b>
                 </p>
                 <p>
-                  소개하며 재활용쓰레기가 환경에 미치는 영향을 한 눈에 보기 쉽게
-                  그래프
+                  <b>
+                    소개하며 재활용쓰레기가 환경에 미치는 영향을 한 눈에 보기
+                    쉽게 그래프
+                  </b>
                 </p>
                 <p>
-                  형식으로 보여주고, 재활용을 올바르게 하는 방법을 사진과
-                  그래프를 통해
+                  <b>
+                    형식으로 보여주고, 재활용을 올바르게 하는 방법을 사진과
+                    그래프를 통해
+                  </b>
                 </p>
                 <p>
-                  소개합니다 친환경으로 가는 사회에 발판을 마련하는 것이
-                  SOCIAL경영 철학입니다.
+                  <b>
+                    소개합니다 친환경으로 가는 사회에 발판을 마련하는 것이
+                    SOCIAL경영 철학입니다.
+                  </b>
                 </p>
               </h3>
             </div>
@@ -109,7 +141,11 @@ function Main1() {
           <CardBody>
             <img
               src={require("assets/img/S.png")}
-              style={{ marginLeft: "100px", marginTop: "50px" }}
+              style={{
+                marginLeft: "100px",
+
+                height: "230px",
+              }}
             />
           </CardBody>
           <CardFooter className="text-center"></CardFooter>
@@ -126,7 +162,10 @@ function Main1() {
       <Col md="4">
         <Card className="card-profile card-plain">
           <CardBody>
-            <img src={require("assets/img/G.png")} />
+            <img
+              src={require("assets/img/G.png")}
+              style={{ height: "230px" }}
+            />
           </CardBody>
           <CardFooter className="text-center"></CardFooter>
         </Card>
@@ -134,33 +173,47 @@ function Main1() {
       <Col md="6">
         <Card className="card-profile card-plain">
           <CardBody>
-            <span className="title">윤리적 지배구조를 위한 GAIA의 실천</span>
+            <span className="title" style={{ fontSize: "25px" }}>
+              <b>윤리적 지배구조를 위한 GAIA의 실천</b>
+            </span>
             <br />
             <div style={{ textAlign: "left" }}>
               <h3 className="Sub">
                 <p>
-                  분기별 1회, 연 4회 모든 직원은 공식적인 사내 공모를 통하여
-                  회사의 발전
+                  <b>
+                    분기별 1회, 연 4회 모든 직원은 공식적인 사내 공모를 통하여
+                    회사의 발전
+                  </b>
                 </p>
                 <p>
-                  방향을 제시할 수 있고 소비자의 제안을 적극적으로 수용합니다
-                  이를
+                  <b>
+                    방향을 제시할 수 있고 소비자의 제안을 적극적으로 수용합니다
+                    이를
+                  </b>
                 </p>
                 <p>
-                  구체화하고 실천하고자 근로자 대표를 사내 이사로 선임하고
-                  소비자 입장을
+                  <b>
+                    구체화하고 실천하고자 근로자 대표를 사내 이사로 선임하고
+                    소비자 입장을
+                  </b>
                 </p>
                 <p>
-                  대변하는 외부 인사를 사외이사로 선임하고 있습니다 이를 통하여
-                  환경적
+                  <b>
+                    대변하는 외부 인사를 사외이사로 선임하고 있습니다 이를
+                    통하여 환경적
+                  </b>
                 </p>
                 <p>
-                  사회적 경제적 가치 Sustainable triple bottom line의 건강한
-                  지속
+                  <b>
+                    사회적 경제적 가치 Sustainable triple bottom line의 건강한
+                    지속
+                  </b>
                 </p>
                 <p>
-                  순환과 성장을 창출합니다 GAIA의 투명한 GOVERNANCE
-                  경영철학입니다.
+                  <b>
+                    순환과 성장을 창출합니다 GAIA의 투명한 GOVERNANCE
+                    경영철학입니다.
+                  </b>
                 </p>
               </h3>
             </div>
@@ -186,7 +239,9 @@ function Main1() {
             <Col md="4">
               <Card className="card-profile card-plain">
                 <CardBody>
-                  <h3>- ABOUT US </h3>
+                  <h3>
+                    <b> ABOUT US </b>
+                  </h3>
                 </CardBody>
                 <CardFooter className="text-center"></CardFooter>
               </Card>
@@ -200,30 +255,44 @@ function Main1() {
                 <CardBody>
                   <h3 className="Sub">
                     <p>
-                      GAIA는 사회문제 해결을 위해 노력하는 브랜드들과 협업하여
-                      가치 있는 삶의
+                      <b>
+                        GAIA는 사회문제 해결을 위해 노력하는 브랜드들과 협업하여
+                        가치 있는 삶의
+                      </b>
                     </p>
                     <p>
-                      방식을 제안하며 각 브랜드의 특별한 스토리가 담긴 공간을
-                      만들어 나갑니다.
+                      <b>
+                        방식을 제안하며 각 브랜드의 특별한 스토리가 담긴 공간을
+                        만들어 나갑니다.
+                      </b>
                     </p>
                     <p>
-                      온라인 편집매장 운영을 통해 50여개의 브랜드들을 유통하며
-                      함께하는 브랜드가
+                      <b>
+                        온라인 편집매장 운영을 통해 50여개의 브랜드들을 유통하며
+                        함께하는 브랜드가
+                      </b>
                     </p>
                     <p>
-                      다양한 경험을 통해 끊임없이 도전 할 수 있도록 돕고 판로를
-                      확대해 나가는 것이
+                      <b>
+                        다양한 경험을 통해 끊임없이 도전 할 수 있도록 돕고
+                        판로를 확대해 나가는 것이
+                      </b>
+                    </p>
+                    <p style={{ width: "550px" }}>
+                      <b>
+                        GAIA의 역할입니다 또한 DASH BOARD를 이용한 재활용
+                        폐기물들이 버려지는
+                      </b>
                     </p>
                     <p>
-                      GAIA의 역할입니다 또한 DASH BOARD를 이용한 재활용
-                      폐기물들이 버려지는
+                      <b>
+                        소각, 매립, 투기 등의 문제를 다루고 이러한 폐기물을
+                        이용해서 제품을 생산하는
+                      </b>
                     </p>
                     <p>
-                      소각, 매립, 투기 등의 문제를 다루고 이러한 폐기물을
-                      이용해서 제품을 생산하는
+                      <b>기업들의 소개 및 올바른 재활용 방법등을 소개합니다.</b>
                     </p>
-                    <p>기업들의 소개 및 올바른 재활용 방법등을 소개합니다.</p>
                   </h3>
                 </CardBody>
 
