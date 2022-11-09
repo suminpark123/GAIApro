@@ -7,11 +7,14 @@ import { Button, FormGroup, Input, Modal, Row, Col } from "reactstrap";
 function Examplesu1() {
   const [liveDemo, setLiveDemo] = React.useState(false);
 
-  const [state, setState] = useState({
+  const [state1, setState1] = useState({
     series: [
       {
-        name: "Inflation",
-        data: [2.3, 3.1, 4.0, 10.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
+        name: "해양에 투기되는 플라스틱양(단위: 만 톤)",
+        data: [
+          870, 850, 790, 860, 910, 920, 906, 930, 940, 963, 982, 994, 1003,
+          1020, 1100, 1200,
+        ],
       },
     ],
     options: {
@@ -22,7 +25,7 @@ function Examplesu1() {
       },
       plotOptions: {
         bar: {
-          borderRadius: 0,
+          borderRadius: 10,
           dataLabels: {
             position: "top", // top, center, bottom
           },
@@ -31,29 +34,33 @@ function Examplesu1() {
       dataLabels: {
         enabled: true,
         formatter: function (val) {
-          return val + "%";
+          return val + "만";
         },
         offsetY: -20,
         style: {
-          fontSize: "12px",
-          colors: ["#304758"],
+          fontSize: "10px",
+          colors: ["#009000"],
         },
       },
 
       xaxis: {
         categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
+          "2004",
+          "2005",
+          "2006",
+          "2007",
+          "2008",
+          "2009",
+          "2010",
+          "2011",
+          "2012",
+          "2013",
+          "2014",
+          "2015",
+          "2016",
+          "2017",
+          "2018",
+          "2019",
         ],
         position: "top",
         axisBorder: {
@@ -88,12 +95,12 @@ function Examplesu1() {
         labels: {
           show: false,
           formatter: function (val) {
-            return val + "%";
+            return val + "만";
           },
         },
       },
       title: {
-        text: "재활용 쓰레기",
+        text: "해양에 투기되는 플라스틱양(단위: 만 톤)",
         floating: true,
         offsetY: 330,
         align: "center",
@@ -103,21 +110,23 @@ function Examplesu1() {
       },
     },
   });
+
   return (
     <>
       <Button
         color="primary"
         type="button"
         onClick={() => setLiveDemo(true)}
-        style={{ borderRadius: "20px" }}
+        style={{
+          borderRadius: "20px",
+          backgroundColor: "green",
+          border: "green",
+        }}
       >
-        자세히 알아보기
+        그런데...
       </Button>
       <Modal isOpen={liveDemo} toggle={() => setLiveDemo(false)} size="lg">
         <div className="modal-header">
-          <h5 className="modal-title" id="exampleModalLiveLabel">
-            Modal title
-          </h5>
           <button
             aria-label="Close"
             className="close"
@@ -129,52 +138,30 @@ function Examplesu1() {
           </button>
         </div>
         <div className="modal-body">
-          <p>
-            <Row>
-              <Col>
-                {/* <div
-                  style={{
-                    width: 375,
-                    display: "inline-block",
-                    // backgroundColor: "#CCF99C",
-                    opacity: 0.7,
-                  }}
-                > */}
-                <ReactApexChart
-                  options={state.options}
-                  series={state.series}
-                  type="bar"
-                  height={300}
-                />
-                {/* </div> */}
-              </Col>
-            </Row>
+          <ReactApexChart
+            options={state1.options}
+            series={state1.series}
+            type="bar"
+            height={350}
+          />
+          <p
+            style={{
+              color: "black",
+              fontSize: "18px",
+              marginBottom: "10px",
+            }}
+          >
+            <b>
+              {" "}
+              플라스틱 폐기물 처리에 실패하면서 우리는 지구를 죽이고 있습니다.
+              매년 800만에서 1,200만 톤의 플라스틱이 해양에 투기되고 있는데요,
+              이는 매 분마다 쓰레기 트럭 한대를 바다에 버리고 있는 것과
+              마찬가지입니다. 태평양에는 거대한 플라스틱 쓰레기 지대가 있는데
+              이는 미국 텍사스 주의 2배 크기입니다. 정말 심각한 문제죠.
+            </b>
           </p>
         </div>
-        <div className="modal-footer">
-          <div className="left-side">
-            <Button
-              className="btn-link"
-              color="default"
-              data-dismiss="modal"
-              type="button"
-              onClick={() => setLiveDemo(false)}
-            >
-              Never mind
-            </Button>
-          </div>
-          <div className="divider" />
-          <div className="right-side">
-            <Button
-              className="btn-link"
-              color="danger"
-              type="button"
-              onClick={() => setLiveDemo(false)}
-            >
-              Delete
-            </Button>
-          </div>
-        </div>
+        <div className="modal-footer"></div>
       </Modal>
     </>
   );

@@ -6,268 +6,21 @@ import { Button, FormGroup, Input, Modal, Row, Col } from "reactstrap";
 
 function Examplesu0() {
   const [liveDemo, setLiveDemo] = React.useState(false);
-  const [state3, setState3] = useState({
+  const [state, setState] = useState({
     series: [
       {
-        name: "north",
-        data: [
-          {
-            x: 1996,
-            y: 322,
-          },
-          {
-            x: 1997,
-            y: 324,
-          },
-          {
-            x: 1998,
-            y: 329,
-          },
-          {
-            x: 1999,
-            y: 342,
-          },
-          {
-            x: 2000,
-            y: 348,
-          },
-          {
-            x: 2001,
-            y: 334,
-          },
-          {
-            x: 2002,
-            y: 325,
-          },
-          {
-            x: 2003,
-            y: 316,
-          },
-          {
-            x: 2004,
-            y: 318,
-          },
-          {
-            x: 2005,
-            y: 330,
-          },
-          {
-            x: 2006,
-            y: 355,
-          },
-          {
-            x: 2007,
-            y: 366,
-          },
-          {
-            x: 2008,
-            y: 337,
-          },
-          {
-            x: 2009,
-            y: 352,
-          },
-          {
-            x: 2010,
-            y: 377,
-          },
-          {
-            x: 2011,
-            y: 383,
-          },
-          {
-            x: 2012,
-            y: 344,
-          },
-          {
-            x: 2013,
-            y: 366,
-          },
-          {
-            x: 2014,
-            y: 389,
-          },
-          {
-            x: 2015,
-            y: 334,
-          },
-        ],
-      },
-      {
-        name: "south",
-        data: [
-          {
-            x: 1996,
-            y: 162,
-          },
-          {
-            x: 1997,
-            y: 90,
-          },
-          {
-            x: 1998,
-            y: 50,
-          },
-          {
-            x: 1999,
-            y: 77,
-          },
-          {
-            x: 2000,
-            y: 35,
-          },
-          {
-            x: 2001,
-            y: -45,
-          },
-          {
-            x: 2002,
-            y: -88,
-          },
-          {
-            x: 2003,
-            y: -120,
-          },
-          {
-            x: 2004,
-            y: -156,
-          },
-          {
-            x: 2005,
-            y: -123,
-          },
-          {
-            x: 2006,
-            y: -88,
-          },
-          {
-            x: 2007,
-            y: -66,
-          },
-          {
-            x: 2008,
-            y: -45,
-          },
-          {
-            x: 2009,
-            y: -29,
-          },
-          {
-            x: 2010,
-            y: -45,
-          },
-          {
-            x: 2011,
-            y: -88,
-          },
-          {
-            x: 2012,
-            y: -132,
-          },
-          {
-            x: 2013,
-            y: -146,
-          },
-          {
-            x: 2014,
-            y: -169,
-          },
-          {
-            x: 2015,
-            y: -184,
-          },
-        ],
-      },
-      {
-        name: "west",
-        data: [
-          {
-            x: 1000,
-            y: 162,
-          },
-          {
-            x: 1997,
-            y: 90,
-          },
-          {
-            x: 1998,
-            y: 50,
-          },
-          {
-            x: 1999,
-            y: 77,
-          },
-          {
-            x: 2000,
-            y: 35,
-          },
-          {
-            x: 2001,
-            y: -45,
-          },
-          {
-            x: 2002,
-            y: -88,
-          },
-          {
-            x: 2003,
-            y: -120,
-          },
-          {
-            x: 2004,
-            y: -156,
-          },
-          {
-            x: 2005,
-            y: -123,
-          },
-          {
-            x: 2006,
-            y: -88,
-          },
-          {
-            x: 2007,
-            y: -66,
-          },
-          {
-            x: 2008,
-            y: -45,
-          },
-          {
-            x: 2009,
-            y: -29,
-          },
-          {
-            x: 2010,
-            y: -45,
-          },
-          {
-            x: 2011,
-            y: -88,
-          },
-          {
-            x: 2012,
-            y: -132,
-          },
-          {
-            x: 2013,
-            y: -146,
-          },
-          {
-            x: 2014,
-            y: -169,
-          },
-          {
-            x: 2015,
-            y: -184,
-          },
-        ],
+        name: "이산화탄소 배출 상승세",
+        data: [0, 10, 25, 51, 97, 85, 110, 118, 135, 160],
       },
     ],
     options: {
+      colors: ["#009000"],
       chart: {
-        type: "area",
         height: 350,
+        type: "line",
+        zoom: {
+          enabled: false,
+        },
       },
       dataLabels: {
         enabled: false,
@@ -275,62 +28,29 @@ function Examplesu0() {
       stroke: {
         curve: "straight",
       },
-
       title: {
-        text: "Area with Negative Values",
+        text: "이산화탄소 배출량 상승그래프",
         align: "left",
-        style: {
-          fontSize: "14px",
+      },
+      grid: {
+        row: {
+          colors: ["#f3f3f3", "transparent"], // takes an array which will be repeated on columns
+          opacity: 0.5,
         },
       },
       xaxis: {
-        type: "datetime",
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-      },
-      yaxis: {
-        tickAmount: 4,
-        floating: false,
-
-        labels: {
-          style: {
-            colors: "#8e8da4",
-          },
-          offsetY: -7,
-          offsetX: 0,
-        },
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-      },
-      fill: {
-        opacity: 0.5,
-      },
-      tooltip: {
-        x: {
-          format: "yyyy",
-        },
-        fixed: {
-          enabled: false,
-          position: "topRight",
-        },
-      },
-      grid: {
-        yaxis: {
-          lines: {
-            offsetX: -30,
-          },
-        },
-        padding: {
-          left: 20,
-        },
+        categories: [
+          "1820",
+          "1850",
+          "1940",
+          "1988",
+          "1990",
+          "1994",
+          "2002",
+          "2013",
+          "2015",
+          "현재",
+        ],
       },
     },
   });
@@ -341,15 +61,16 @@ function Examplesu0() {
         color="primary"
         type="button"
         onClick={() => setLiveDemo(true)}
-        style={{ borderRadius: "20px" }}
+        style={{
+          borderRadius: "20px",
+          backgroundColor: "green",
+          border: "green",
+        }}
       >
         자세히 알아보기
       </Button>
       <Modal isOpen={liveDemo} toggle={() => setLiveDemo(false)} size="lg">
         <div className="modal-header">
-          <h5 className="modal-title" id="exampleModalLiveLabel">
-            Modal title
-          </h5>
           <button
             aria-label="Close"
             className="close"
@@ -366,8 +87,8 @@ function Examplesu0() {
             <Row>
               <Col>
                 <ReactApexChart
-                  options={state3.options}
-                  series={state3.series}
+                  options={state.options}
+                  series={state.series}
                   type="area"
                   height={350}
                 />
@@ -376,30 +97,7 @@ function Examplesu0() {
             {/* 추가완료 */}
           </p>
         </div>
-        <div className="modal-footer">
-          <div className="left-side">
-            <Button
-              className="btn-link"
-              color="default"
-              data-dismiss="modal"
-              type="button"
-              onClick={() => setLiveDemo(false)}
-            >
-              Never mind
-            </Button>
-          </div>
-          <div className="divider" />
-          <div className="right-side">
-            <Button
-              className="btn-link"
-              color="danger"
-              type="button"
-              onClick={() => setLiveDemo(false)}
-            >
-              Delete
-            </Button>
-          </div>
-        </div>
+        <div className="modal-footer"></div>
       </Modal>
     </>
   );
