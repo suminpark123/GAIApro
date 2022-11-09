@@ -20,88 +20,69 @@ function SectionDark() {
           <section className="">
             <MDBRow>
               <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
-                <h5 className="text-uppercase">Links</h5>
-
-                <ul className="list-unstyled mb-0">
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 1
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 2
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 3
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 4
-                    </a>
-                  </li>
-                </ul>
-              </MDBCol>
-
-              <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
-                <h5 className="text-uppercase">Links</h5>
-
-                <ul className="list-unstyled mb-0">
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 1
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 2
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 3
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 4
-                    </a>
-                  </li>
-                </ul>
+                <p>
+                  <MDBIcon color="secondary" icon="home" className="me-2" />
+                  대표이사 : 박수민
+                </p>
+                <br />
+                <p>
+                  <MDBIcon color="secondary" icon="" className="me-3" />
+                  사업자번호 : 178-82-00065
+                </p>
+                <br />
+                <p>
+                  <MDBIcon color="secondary" icon="phone" className="me-3" />
+                  010-1234-5678
+                </p>
+                <br />
+                <p>
+                  <MDBIcon color="secondary" icon="envelope" className="me-3" />
+                  suminpark123@naver.com
+                </p>
               </MDBCol>
               <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
-                <h5 className="text-uppercase">Linkㄴㅇㅁㅎㄹs</h5>
-
-                <ul className="list-unstyled mb-0">
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 1
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 2
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 3
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#!" className="text-white">
-                      Link 4
-                    </a>
-                  </li>
-                </ul>
+                <p>
+                  <MDBIcon color="secondary" icon="" className="me-2" />
+                  이용약관
+                </p>
+                <br />
+                <p>
+                  <MDBIcon color="secondary" icon="" className="me-3" />
+                  환불규정
+                </p>
+                <br />
+                <p>
+                  <MDBIcon color="secondary" icon="" className="me-3" />
+                  개인정보처리 방침
+                </p>
+                <br />
+                <p>
+                  <MDBIcon color="secondary" icon="phone" className="me-3" />
+                  고객센터
+                </p>
               </MDBCol>
-
-              <MDBCol md="4" lg="3" xl="3" className="mx-auto mb-md-0 mb-4">
-                <h6 className="text-uppercase fw-bold mb-4">Contact</h6>
-
+              <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+                <p>
+                  <MDBIcon color="secondary" icon="" className="me-2" />
+                  고객 담당 : 서은유
+                </p>
+                <br />
+                <p>
+                  <MDBIcon color="secondary" icon="" className="me-3" />
+                  기업 담당 : 조찬익
+                </p>
+                <br />
+                <p>
+                  <MDBIcon color="secondary" icon="" className="me-3" />
+                  환불 담당 : 노강민
+                </p>
+                <br />
+                <p>
+                  <MDBIcon color="secondary" icon="phone" className="me-3" />
+                  상담 번호 : 010-1981-5189
+                </p>
+              </MDBCol>
+              <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
                 <p>
                   <MDBIcon color="secondary" icon="home" className="me-2" />
                   광주광역시 동구 예술길 31-15 4층
