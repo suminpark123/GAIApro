@@ -77,6 +77,34 @@ router.post("/alll", function (req, res) {
   });
 });
 
+// 리뷰
+router.post("/review", function (request, response) {
+  console.log("회원가입 라우터");
+
+  let id = request.body.id;
+  let review = request.body.review;
+  let suproduct = request.body.suproduct;
+
+  console.log("아이디 :" + id, review, suproduct);
+
+  // conn.connect();
+
+  //db sql문
+  let sql = "insert into tbl_review values(?,?,?)"; //?값으로 대체
+  conn.query(sql, function (err, rows) {
+    if (!err) {
+      console.log("리뷰디비성공");
+    } else {
+      console.log("실패" + err);
+
+      // alert("비밀번호 다시");
+      // response.redirect(alert("다시입력해라"));
+      // 리액트 포트번호로 넘겨주기
+    }
+  });
+  // 추가
+});
+
 router.post("/alll2", function (req, res) {
   console.log("올라우터");
 
