@@ -7,102 +7,8 @@ import { Button, FormGroup, Input, Modal, Row, Col } from "reactstrap";
 function Examplesu2() {
   const [liveDemo, setLiveDemo] = React.useState(false);
 
-  const [state1, setState1] = useState({
-    series: [
-      {
-        name: "Inflation",
-        data: [5.6, 3.1, 4.0, 5.1, 4.0, 3.6, 3.2, 2.3, 1.4, 0.8, 0.5, 0.2],
-      },
-    ],
-    options: {
-      colors: ["#009000"],
-      chart: {
-        height: 350,
-        type: "bar",
-      },
-      plotOptions: {
-        bar: {
-          borderRadius: 0,
-          dataLabels: {
-            position: "top", // top, center, bottom
-          },
-        },
-      },
-      dataLabels: {
-        enabled: true,
-        formatter: function (val) {
-          return val + "%";
-        },
-        offsetY: -20,
-        style: {
-          fontSize: "12px",
-          colors: ["#304758"],
-        },
-      },
+  const [state1, setState1] = useState({});
 
-      xaxis: {
-        categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
-          "Oct",
-          "Nov",
-          "Dec",
-        ],
-        position: "top",
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        crosshairs: {
-          fill: {
-            type: "gradient",
-            gradient: {
-              colorFrom: "#D8E3F0",
-              colorTo: "#BED1E6",
-              stops: [0, 100],
-              opacityFrom: 0.4,
-              opacityTo: 0.5,
-            },
-          },
-        },
-        tooltip: {
-          enabled: true,
-        },
-      },
-      yaxis: {
-        axisBorder: {
-          show: false,
-        },
-        axisTicks: {
-          show: false,
-        },
-        labels: {
-          show: false,
-          formatter: function (val) {
-            return val + "%";
-          },
-        },
-      },
-      title: {
-        text: "예)소각 쓰레기",
-        floating: true,
-        offsetY: 330,
-        align: "center",
-        style: {
-          color: "#444",
-        },
-      },
-    },
-  });
   return (
     <>
       <Button
@@ -140,12 +46,7 @@ function Examplesu2() {
                       opacity: 0.7,
                     }}
                   > */}
-                <ReactApexChart
-                  options={state1.options}
-                  series={state1.series}
-                  type="bar"
-                  height={300}
-                />
+
                 {/* </div> */}
               </Col>
             </Row>

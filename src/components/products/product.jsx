@@ -6,7 +6,6 @@ import { preProcessFile } from "typescript";
 export const Product = ({ product, convertPrice }) => {
   const { id, name, provider, price, image } = product;
 
- 
   return (
     product && (
       <div className={styles.product}>

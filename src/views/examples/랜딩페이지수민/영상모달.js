@@ -37,7 +37,7 @@ function SuminModal() {
         </Modal.Header> */}
         <Modal.Body>
           <Iframe
-            url="https://www.youtube.com/embed/wq-Memch86M"
+            url="https://www.youtube.com/embed/NVjs3-ft4KU"
             width="100%"
             height="350px"
             id=""

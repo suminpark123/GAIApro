@@ -7,6 +7,7 @@ export const CartList = ({
   handleQuantity,
   handleRemove,
   handleCheckList,
+  setCnt,
 }) => {
   return (
     <section className={styles.cart_product_list}>
@@ -38,6 +39,7 @@ export const CartList = ({
           alt="minus"
           onClick={() => {
             handleQuantity("minus", cart.id, cart.quantity - 1);
+            setCnt(cart.quantity - 1);
           }}
         />
 
@@ -48,7 +50,10 @@ export const CartList = ({
           className={styles.plus}
           src={process.env.PUBLIC_URL + "/images/icon-plus-line.svg"}
           alt="plus"
-          onClick={() => handleQuantity("plus", cart.id, cart.quantity + 1)}
+          onClick={() => {
+            handleQuantity("plus", cart.id, cart.quantity + 1);
+            setCnt(cart.quantity + 1);
+          }}
         />
       </div>
 

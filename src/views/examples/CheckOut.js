@@ -160,6 +160,7 @@ function CheckOut() {
           </div>
         </form>
       </div>
+
       <body>
         <section className="cart">
           <div className="cart__mainbtns">

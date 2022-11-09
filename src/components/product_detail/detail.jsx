@@ -3,11 +3,19 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../service/fetcher";
 import { useHistory } from "react-router-dom";
+import { useRef } from "react";
+import { useCallback } from "react";
 
 export const Detail = ({ convertPrice, cart, setCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [count, setCount] = useState(1);
+
+  // 추가
+  // const textRef = useRef();
+  // const handleResizeHeight = useCallback(() => {
+  //   textRef.current.style.height = textRef.current.scrollHeight + "px";
+  // }, []);
 
   const history = useHistory();
   // 상세페이지에서 물건 수량 조절
@@ -151,6 +159,29 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
             </div>
           </section>
         </main>
+        <div style={{ height: "200px" }}></div>
+        {/* 추가 */}
+        <form
+          className="register-form"
+          action="http://localhost:3007/CheckOut"
+          method="post"
+        >
+          <div
+            style={{
+              display: "flex",
+              position: "absolute",
+              marginLeft: "450px",
+            }}
+          >
+            <div style={{ color: "red" }}>id</div>
+            <textarea
+              cols="70"
+              rows="5"
+              placeholder="입력하세요"
+              name="review"
+            ></textarea>
+          </div>
+        </form>
       </>
     )
   );
