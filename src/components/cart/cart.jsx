@@ -69,6 +69,7 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
     }
   };
 
+  const [cnt, setCnt] = useState(0);
   return (
     <>
       <ExamplesNavbarGoods />
@@ -88,6 +89,7 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
               handleRemove={handleRemove}
               handleCheckList={handleCheckList}
               checkLists={checkLists}
+              test={setCnt}
             />
           );
         })
@@ -108,7 +110,7 @@ export const Cart = ({ cart, setCart, convertPrice }) => {
       ) : (
         ""
       )}
-      <CheckOut />
+      <CheckOut name={cart.id} price={cart.price} cnt={cnt} />
       <SectionDark />
     </>
   );
