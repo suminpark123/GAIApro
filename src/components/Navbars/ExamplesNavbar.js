@@ -64,6 +64,7 @@ function ExamplesNavbar() {
       </DropdownItem>
     </DropdownMenu>
   );
+
   useEffect(function () {
     setName(localStorage.getItem("id"));
     if (localStorage.getItem("id") != undefined) {

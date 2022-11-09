@@ -68,15 +68,15 @@ function Manage3() {
                   {users.map((c) => {
                     return (
                       <Deliver
-                        key={c.name}
-                        name={c.name}
-                        phone={c.phone}
-                        product1={c.product1}
-                        total={c.total}
-                        addr1={c.addr1}
-                        addr2={c.addr2}
-                        pay={c.pay}
-                        deliver={c.deliver}
+                        key={c.m_name}
+                        m_name={c.m_name}
+                        phone_number={c.phone_number}
+                        product_name={c.product_name}
+                        total_pay={c.total_pay}
+                        o_delivery_addr1={c.o_delivery_addr1}
+                        o_delivery_addr2={c.o_delivery_addr2}
+                        status_pay={c.status_pay}
+                        status_delivery={c.status_delivery}
                       />
                     );
                   })}

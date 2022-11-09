@@ -81,7 +81,7 @@ function Manages1() {
                 {users.map((c) => {
                   return (
                     <Customer
-                      key={c.id}
+                      // key={c.id}
                       id={c.id}
                       name={c.name}
                       nick={c.nick}

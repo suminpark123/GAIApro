@@ -125,6 +125,7 @@ function CheckOut() {
                     fontSize: "30px",
                     textAlign: "center",
                   }}
+                  id="name"
                 />
                 <br />
                 {/* <span className="글자크기">전화번호</span> */}
@@ -138,6 +139,7 @@ function CheckOut() {
                     fontSize: "30px",
                     textAlign: "center",
                   }}
+                  id="phonenumber"
                 />
                 <br />
                 {/* <span className="글자크기">배송지</span> */}
@@ -153,6 +155,7 @@ function CheckOut() {
                     fontSize: "30px",
                     textAlign: "center",
                   }}
+                  id="addr1"
                 />
                 <br />
                 <input
@@ -166,6 +169,7 @@ function CheckOut() {
                     // marginLeft: "600px",
                     textAlign: "center",
                   }}
+                  id="addr2"
                 />
                 <br />
                 <Button className="CBtn" type="submit">

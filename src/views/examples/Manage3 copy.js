@@ -4,28 +4,28 @@ class Deliver extends React.Component {
     return (
       <tr>
         <td>
-          <b>{this.props.name}</b>
+          <b>{this.props.m_name}</b>
         </td>
         <td>
-          <b>{this.props.phone}</b>
+          <b>{this.props.phone_number}</b>
         </td>
         <td>
-          <b>{this.props.product1}</b>
+          <b>{this.props.product_name}</b>
         </td>
         <td>
-          <b>{this.props.total}</b>
+          <b>{this.props.total_pay}</b>
         </td>
         <td>
-          <b>{this.props.addr1}</b>
+          <b>{this.props.o_delivery_addr1}</b>
         </td>
         <td>
-          <b>{this.props.addr2}</b>
+          <b>{this.props.o_delivery_addr2}</b>
         </td>
         <td>
-          <b>{this.props.pay}</b>
+          <b>{this.props.status_pay}</b>
         </td>
         <td>
-          <b>{this.props.deliver}</b>
+          <b>{this.props.status_delivery}</b>
         </td>
       </tr>
     );
