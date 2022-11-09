@@ -63,7 +63,7 @@ router.post("/alll", function (req, res) {
   console.log("올라우터");
 
   //db sql문
-  let sql = "select *from tbl_member"; //?값으로 대체
+  let sql = "select * from tbl_member"; //?값으로 대체
   conn.query(sql, function (err, rows) {
     if (!err) {
       //만약 에러가 안났으면
@@ -164,7 +164,7 @@ router.post("/alll2", function (req, res) {
   console.log("올라우터");
 
   //db sql문
-  let sql = "select *from tbl_product"; //?값으로 대체
+  let sql = "select * from tbl_product"; //?값으로 대체
   conn.query(sql, function (err, rows) {
     if (!err) {
       //만약 에러가 안났으면
@@ -222,7 +222,7 @@ router.post("/login-page", function (request, res) {
 
   //세션완료
 
-  let sql = "select *from tbl_member where id =? and pw =?";
+  let sql = "select * from tbl_member where id =? and pw =?";
   conn.query(sql, [id, pw], function (err, rows) {
     if (rows.length > 0) {
       console.log("로그인 성공ㄷㄷ");
