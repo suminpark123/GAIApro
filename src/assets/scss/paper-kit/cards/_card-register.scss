@@ -1,3 +1,29 @@
+.card-register1 {
+  background-color: #528f3a;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 900px;
+  margin: 20px 0 70px;
+  min-height: 200px;
+  padding: 30px;
+  & label {
+    margin-top: 15px;
+  }
+  & .card-title {
+    color: #b33c12;
+    text-align: center;
+  }
+  & .btn {
+    margin-top: 30px;
+  }
+  & .forgot {
+    text-align: center;
+  }
+
+  .input-group-text {
+    border: 1px solid $white-color;
+  }
+}
 .card-register {
   background-color: #528f3a;
   border-radius: 8px;
@@ -11,7 +37,63 @@
     margin-top: 15px;
   }
   & .card-title {
-    color: #B33C12;
+    color: #b33c12;
+    text-align: center;
+  }
+  & .btn {
+    margin-top: 30px;
+  }
+  & .forgot {
+    text-align: center;
+  }
+
+  .input-group-text {
+    border: 1px solid $white-color;
+  }
+}
+
+.card-registersu {
+  background-color: #528f3a;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 800px;
+  margin: 20px 0 70px;
+  min-height: 400px;
+  padding: 70px;
+
+  & label {
+    margin-top: 15px;
+  }
+  & .card-title {
+    color: #b33c12;
+    text-align: center;
+  }
+  & .btn {
+    margin-top: 30px;
+  }
+  & .forgot {
+    text-align: center;
+  }
+
+  .input-group-text {
+    border: 1px solid $white-color;
+  }
+}
+
+.card-registermin {
+  background-color: #528f3a;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 800px;
+  margin: 20px 0 70px;
+  min-height: 400px;
+  padding: 70px;
+
+  & label {
+    margin-top: 15px;
+  }
+  & .card-title {
+    color: #b33c12;
     text-align: center;
   }
   & .btn {

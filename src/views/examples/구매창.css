@@ -1,0 +1,80 @@
+백그라운드 #order_wrap {
+  margin: 0 auto;
+  display: block;
+  justify-content: space-around;
+}
+/* 백그라운드 */
+#order_wrap .left {
+}
+
+#order_wrap .left img {
+}
+/* 백그라운드 */
+#order_wrap .right {
+}
+/* 백그라운드 */
+#order_wrap .right .top {
+}
+#order_wrap .right .top h1 {
+  font-size: 2rem;
+  padding: 20px 0;
+}
+#order_wrap .right .top > p:nth-child(2) {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+#order_wrap .right .top dl {
+  display: flex;
+  flex-flow: row wrap;
+}
+#order_wrap .right .top dl dt {
+  width: 30%;
+  padding: 5px 0;
+}
+#order_wrap .right .top dl dd {
+  width: 70%;
+  padding: 5px 0;
+}
+#order_wrap .right .top dl dd.price {
+  font-weight: 700;
+}
+#order_wrap .right .top .number {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+#order_wrap .right .top .number .order_name {
+}
+#order_wrap .right .top .number .order_number {
+}
+#order_wrap .right .top .number input[name="num"] {
+  width: 70px;
+}
+#order_wrap .right .top .number .number_price {
+}
+#order_wrap .right .top .total_price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+#order_wrap .right .top .total_price p {
+}
+#order_wrap .right .top .total_price p:nth-child(1) {
+}
+#order_wrap .right .top .total_price .result_price {
+}
+/* 백그라운드 */
+#order_wrap .right .bottom {
+  background: beige;
+}
+#order_wrap .right .bottom button {
+}
+#order_wrap .right .bottom #order_btn {
+}
+#order_wrap .right .bottom #cart_btn {
+}
+#order_wrap .right .bottom #like_btn {
+}

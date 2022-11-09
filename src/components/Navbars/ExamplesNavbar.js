@@ -1,27 +1,11 @@
-/*!
-
-=========================================================
-* Paper Kit React - v1.3.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
-
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
+import axios from "axios";
 import React from "react";
 import { Link } from "react-router-dom";
 // nodejs library that concatenates strings
 import classnames from "classnames";
-
-// reactstrap components
+import CheckOut from "views/examples/CheckOut";
+import { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import {
   Collapse,
   NavbarBrand,
@@ -36,16 +20,13 @@ import {
   DropdownItem,
   UncontrolledDropdown,
 } from "reactstrap";
-
 function ExamplesNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [navbarCollapse, setNavbarCollapse] = React.useState(false);
-
   const toggleNavbarCollapse = () => {
     setNavbarCollapse(!navbarCollapse);
     document.documentElement.classList.toggle("nav-open");
   };
-
   React.useEffect(() => {
     const updateNavbarColor = () => {
       if (
@@ -60,13 +41,102 @@ function ExamplesNavbar() {
         setNavbarColor("navbar-transparent");
       }
     };
-
     window.addEventListener("scroll", updateNavbarColor);
-
     return function cleanup() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
+  // 추가
+  const history = useHistory();
+  const [admin, setAdmin] = useState("");
+  const [name, setName] = useState("");
+  const [login, setLogin] = useState("로그인");
+  const [down, setDowm] = useState(
+    <DropdownMenu
+      aria-labelledby="dropdownMenuButton"
+      className="dropdown-info"
+    >
+      <DropdownItem to="/login-page" tag={Link}>
+        LOGIN
+      </DropdownItem>
+      <DropdownItem to="/register-page" tag={Link}>
+        REGISTER
+      </DropdownItem>
+    </DropdownMenu>
+  );
+  useEffect(function () {
+    setName(localStorage.getItem("id"));
+    if (localStorage.getItem("id") != undefined) {
+      if (localStorage.getItem("id") == "관리자") {
+        setAdmin(
+          <UncontrolledDropdown nav inNavbar>
+            <DropdownToggle
+              aria-expanded={false}
+              aria-haspopup={true}
+              caret
+              color="default"
+              data-toggle="dropdown"
+              href="#pablo"
+              id="dropdownMenuButton"
+              nav
+              role="button"
+            >
+              <i className="nc-icon nc-layout-11" />
+              Manage
+            </DropdownToggle>
+            <DropdownMenu
+              aria-labelledby="dropdownMenuButton"
+              className="dropdown-info"
+            >
+              <DropdownItem to="/Manages1" tag={Link}>
+                회원명단
+              </DropdownItem>
+              <DropdownItem to="/Manages2" tag={Link}>
+                상품관리
+              </DropdownItem>
+              <DropdownItem to="/Manage3" tag={Link}>
+                주문현황
+              </DropdownItem>
+            </DropdownMenu>
+          </UncontrolledDropdown>
+        );
+      }
+      setLogin("로그아웃");
+      setDowm("");
+    }
+  }, []);
+  // 추가
+  function Protest(e) {
+    e.preventDefault();
+    if (localStorage.getItem("id") == undefined) {
+      alert("로그인 해주세요");
+    } else {
+      history.push("/Product");
+    }
+    console.log("프로테스트");
+  }
+
+  function deltest() {
+    localStorage.clear();
+    if (localStorage.getItem("id") == undefined) {
+      setName(localStorage.getItem("id"));
+      setLogin("로그인");
+      setDowm(
+        <DropdownMenu
+          aria-labelledby="dropdownMenuButton"
+          className="dropdown-info"
+        >
+          <DropdownItem to="/login-page" tag={Link}>
+            LOGIN
+          </DropdownItem>
+          <DropdownItem to="/register-page" tag={Link}>
+            REGISTER
+          </DropdownItem>
+        </DropdownMenu>
+      );
+      setAdmin("");
+    }
+  }
   return (
     <Navbar
       className={classnames("fixed-top", navbarColor)}
@@ -78,7 +148,6 @@ function ExamplesNavbar() {
           <NavbarBrand
             data-placement="bottom"
             to="/index"
-            target="blank"
             title="Coded by Creative Tim"
             tag={Link}
           >
@@ -102,6 +171,8 @@ function ExamplesNavbar() {
           isOpen={navbarCollapse}
         >
           <Nav navbar>
+            {/* 추가 */}
+            {admin}
             <NavItem>
               <NavLink to="/index" tag={Link}>
                 <i className="nc-icon nc-layout-11" /> HOME
@@ -112,7 +183,6 @@ function ExamplesNavbar() {
                 <i className="nc-icon nc-layout-11" /> ECO & PROCESS
               </NavLink>
             </NavItem>
-
             {/* 추가2 */}
             <NavItem>
               <NavLink to="/landing-page2" tag={Link}>
@@ -127,40 +197,12 @@ function ExamplesNavbar() {
               </NavLink>
             </NavItem>
             {/* 추가3완료 */}
+            <NavItem>
+              <NavLink to="/Product" tag={Link}>
+                <i className="nc-icon nc-layout-11" /> Product
+              </NavLink>
+            </NavItem>
 
-            {/* 추가상품카테고리 */}
-            <UncontrolledDropdown nav inNavbar>
-              <DropdownToggle
-                aria-expanded={false}
-                aria-haspopup={true}
-                caret
-                color="default"
-                data-toggle="dropdown"
-                href="#pablo"
-                id="dropdownMenuButton"
-                nav
-                onClick={(e) => e.preventDefault()}
-                role="button"
-              >
-                <i className="nc-icon nc-layout-11" />
-                GOODS
-              </DropdownToggle>
-              <DropdownMenu
-                aria-labelledby="dropdownMenuButton"
-                className="dropdown-info"
-              >
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <Link to="/landing-page4">PRODUCT</Link>
-                </DropdownItem>
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <Link to="/register-page2">SINGLE PRODUCT</Link>
-                </DropdownItem>
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <Link to="/register-page2">CHECKOUT</Link>
-                </DropdownItem>
-              </DropdownMenu>
-            </UncontrolledDropdown>
-            {/* 추가상품완료 */}
             {/* 수정 */}
             <UncontrolledDropdown nav inNavbar>
               <DropdownToggle
@@ -172,23 +214,14 @@ function ExamplesNavbar() {
                 href="#pablo"
                 id="dropdownMenuButton"
                 nav
-                onClick={(e) => e.preventDefault()}
+                onClick={deltest}
                 role="button"
               >
                 <i className="nc-icon nc-layout-11" />
-                LOGIN
+                <span>{name}</span> {login}
               </DropdownToggle>
-              <DropdownMenu
-                aria-labelledby="dropdownMenuButton"
-                className="dropdown-info"
-              >
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <Link to="/register-page">LOGIN</Link>
-                </DropdownItem>
-                <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                  <Link to="/register-page2">REGISTER</Link>
-                </DropdownItem>
-              </DropdownMenu>
+
+              {down}
             </UncontrolledDropdown>
             {/* 추가6완료 */}
           </Nav>
@@ -197,5 +230,4 @@ function ExamplesNavbar() {
     </Navbar>
   );
 }
-
 export default ExamplesNavbar;
