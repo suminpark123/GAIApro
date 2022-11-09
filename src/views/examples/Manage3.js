@@ -17,20 +17,6 @@ function Manage3() {
     };
   });
 
-  const [users, setUsers] = useState([]);
-
-  useEffect(function () {
-    axios
-      .post("http://localhost:3007/alll3")
-      .then((result) => {
-        console.log("데이터셩공", result.data.result);
-        setUsers(result.data.result);
-      })
-      .catch(() => {
-        console.log("데이터실패");
-      });
-  }, []);
-
   return (
     <>
       <ExamplesNavbar />
@@ -55,28 +41,16 @@ function Manage3() {
                   style={{ marginLeft: "auto", marginRight: "auto" }}
                 >
                   <tr bgcolor={"whitesmoke"}>
-                    <th></th>
-                    <th>아이디</th>
+                    <th>수령인</th>
+                    <th>연락처</th>
                     <th>상품 정보</th>
-                    <th>
-                      상품 금액{"("}수량{")"}
-                    </th>
+
+                    <th>총 금액</th>
+                    <th>주소</th>
+                    <th>상세주소</th>
                     <th>결제 상태</th>
                     <th>배송 상태</th>
-                    <th>특이사항</th>
                   </tr>
-                  {users.map((c) => {
-                    return (
-                      <Deliver
-                        key={c.id}
-                        id={c.id}
-                        name={c.name}
-                        nick={c.nick}
-                        birth={c.birth}
-                        gender={c.gender}
-                      />
-                    );
-                  })}
                 </table>
                 <Button
                   variant="primary"

@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import "assets/css/CheckOut.css";
-import { Button, Row, Card, Col, CardFooter, CardBody } from "reactstrap";
+import {
+  Button,
+  Row,
+  Card,
+  Col,
+  CardFooter,
+  CardBody,
+  Container,
+} from "reactstrap";
 import PopupDom from "./PopupDom";
 import PopupPostCode from "./PopupPostCode";
 import { useHistory } from "react-router-dom";
@@ -82,26 +90,30 @@ function CheckOut() {
       <div className="info">
         <div style={{ textAlign: "center" }}>
           <h1 className="Title" style={{ margin: "0px" }}>
-            Order Payment
+            Information
           </h1>
           <br />
           <br />
           <br />
           <br />
         </div>
-        <Row>
-          <Col className="ml-auto mr-auto" md="4">
-            <Card className="card-profile card-plain">
-              <div>
-                <img src={require("assets/img/택배1.jpg")} />
-              </div>
 
-              <form
-                className="register-form"
-                action="http://localhost:3007/CheckOut"
-                method="post"
-              >
-                <span className="글자크기">수령인</span>
+        <form
+          className="register-form"
+          action="http://localhost:3007/CheckOut"
+          method="post"
+        >
+          <Row>
+            <Col className="ml-auto mr-auto" md="5">
+              <Card className="card-profile card-plain">
+                <div>
+                  <img src={require("assets/img/택배1.jpg")} />
+                </div>
+              </Card>
+            </Col>
+            <Col className="ml-auto mr-auto" md="5">
+              <Card className="card-profile card-plain">
+                {/* <span className="글자크기">수령인</span> */}
 
                 <input
                   type="text"
@@ -115,7 +127,7 @@ function CheckOut() {
                   }}
                 />
                 <br />
-                <span className="글자크기">전화번호</span>
+                {/* <span className="글자크기">전화번호</span> */}
                 <input
                   type="text"
                   placeholder={"전화번호를 입력해주세요"}
@@ -128,7 +140,7 @@ function CheckOut() {
                   }}
                 />
                 <br />
-                <span className="글자크기">배송지</span>
+                {/* <span className="글자크기">배송지</span> */}
                 <input
                   type="text"
                   placeholder={"배송지를 입력해주세요"}
@@ -155,6 +167,7 @@ function CheckOut() {
                     textAlign: "center",
                   }}
                 />
+                <br />
                 <Button className="CBtn" type="submit">
                   입력완료
                 </Button>
@@ -165,10 +178,10 @@ function CheckOut() {
                     </PopupDom>
                   )}
                 </div>
-              </form>
-            </Card>
-          </Col>
-        </Row>
+              </Card>
+            </Col>
+          </Row>
+        </form>
       </div>
       <body>
         <section className="cart">
