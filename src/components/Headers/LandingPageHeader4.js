@@ -1,10 +1,8 @@
 import React from "react";
 import { Button, Container } from "reactstrap";
 import { Link } from "react-router-dom";
-
 function LandingPageHeader() {
   let pageHeader = React.createRef();
-
   React.useEffect(() => {
     if (window.innerWidth < 991) {
       const updateScroll = () => {
@@ -18,15 +16,11 @@ function LandingPageHeader() {
       };
     }
   });
-
   return (
     <>
       <div
         style={{
-          backgroundImage:
-            "url(" +
-            "https://www.10wallpaper.com/wallpaper/1366x768/2208/Cute_Girl_Black_Clothing_Beauty_Model_HD_Photo_1366x768.jpg" +
-            ")",
+          backgroundImage: "url(" + require("assets/img/백화점.jpg") + ")",
         }}
         className="page-header page-header-xs"
         data-parallax={true}
@@ -35,5 +29,4 @@ function LandingPageHeader() {
     </>
   );
 }
-
 export default LandingPageHeader;
