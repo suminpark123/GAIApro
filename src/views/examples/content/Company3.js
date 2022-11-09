@@ -2,7 +2,7 @@ import React from "react";
 import ScrollToTop from "./스크롤이벤트";
 import { Card, CardBody, CardFooter, Container, Row, Col } from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import LandingPageHeader from "components/Headers/LandingPageHeader3.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 import SectionDark from "views/MainPage/SectionDark";
 import { Link } from "react-router-dom";

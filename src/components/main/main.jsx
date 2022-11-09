@@ -5,7 +5,7 @@ import { Product } from "../products/product";
 import { getProducts } from "../../service/fetcher";
 import ExamplesNavbarGoods from "components/Navbars/ExamplesNavbarGoods";
 import SectionDark from "views/MainPage/SectionDark";
-import LandingPageHeader from "components/Headers/LandingPageHeader";
+import LandingPageHeader from "components/Headers/LandingPageHeader5";
 import ToTheTop from "views/examples/content/스크롤이벤트2";
 
 export const Main = ({ convertPrice, products, setProducts }) => {

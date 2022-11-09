@@ -2,28 +2,7 @@ import React from "react";
 import Slider from "nouislider";
 import useScrollFadeIn from "views/examples/커스텀훅/useScrollFadeIn";
 import ScrollToTop from "views/examples/content/스크롤이벤트";
-import {
-  // Button,
-  // Label,
-  // FormGroup,
-  // Input,
-  // InputGroupAddon,
-  // InputGroupText,
-  // InputGroup,
-  Container,
-  Row,
-  Col,
-  // CustomInput,
-  Card,
-  CardBody,
-  CardFooter,
-  // CardTitle,
-} from "reactstrap";
-// import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-// import LandingPageHeader from "components/Headers/LandingPageHeader.js";
-// import DemoFooter from "components/Footers/DemoFooter.js";
-// import SectionDark from "views/index-sections/SectionDark";
-// import { isTemplateExpression } from "typescript";
+import { Container, Row, Col, Card, CardBody, CardFooter } from "reactstrap";
 
 function Main1() {
   document.documentElement.classList.remove("nav-open");
@@ -254,38 +233,6 @@ function Main1() {
           </Row>
         </Container>
       </div>
-      {/* <div>
-        <Container>
-          <Row>
-            <Col md="4">
-              <Card className="card-profile card-plain">
-                <CardBody>
-                  <h3>- HISTORY</h3>
-                </CardBody>
-                <CardFooter className="text-center"></CardFooter>
-              </Card>
-            </Col>
-            <Col md="1">
-              <Card className="card-profile card-plain">
-                <CardBody>
-                  <h4></h4>
-                </CardBody>
-                <CardFooter className="text-center"></CardFooter>
-              </Card>
-            </Col>       
-            <Col md="3">
-              <Card className="card-profile card-plain">
-                <CardBody>
-                  <span class="fsize13">
-                    <strong>2022.10 &nbsp;</strong>
-                  </span>
-                </CardBody>
-                <CardFooter className="text-center"></CardFooter>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </div> */}
       <hr
         className="harf-rule"
         style={{

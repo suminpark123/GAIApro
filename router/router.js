@@ -95,6 +95,25 @@ router.post("/alll2", function (req, res) {
   });
 });
 
+// 찬익 주문배송
+router.post("/alll3", function (req, res) {
+  console.log("올라우터");
+
+  //db sql문
+  let sql = "select * from "; //?값으로 대체
+  conn.query(sql, function (err, rows) {
+    if (!err) {
+      //만약 에러가 안났으면
+      console.log("검색성공");
+      console.log(rows);
+      res.json({ result: rows });
+      res.end();
+    } else {
+      console.log("검색실패" + err);
+    }
+  });
+});
+
 //로그인
 router.post("/login-page", function (request, res) {
   console.log("로그인 라우터");
@@ -137,6 +156,29 @@ router.post("/login-page", function (request, res) {
   });
 
   // res.redirect("http://localhost:3003/presentation");
+});
+
+// 배송지 라우터
+router.post("/CheckOut", function (request, response) {
+  console.log("배송정보 라우터");
+  let o_mem = request.body.o_mem;
+  let o_tel = request.body.o_tel;
+  let o_adr = request.body.o_adr;
+  let o_adr2 = request.body.o_adr2;
+
+  console.log("수령인 :" + o_mem);
+  console.log("전화번호 :" + o_tel);
+  console.log("배송지:" + o_adr, o_adr2);
+
+  let sql = "insert into tbl_order values(?,?,?,?)";
+  conn.query(sql, [o_mem, o_tel, o_adr, o_adr2], function (err, rows) {
+    if (!err) {
+      console.log("정보 입력 성공");
+    } else {
+      console.log("실패" + err);
+      console.log("정보를 다시 확인해주세요");
+    }
+  });
 });
 
 module.exports = router;

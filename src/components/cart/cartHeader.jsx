@@ -6,7 +6,7 @@ export const CartHeader = ({ isAllChecked, handleCheckAll }) => {
       <header className={styles.header}>
         <div style={{ textAlign: "center" }}>
           <h1 className="Title" style={{ margin: "0px" }}>
-            Order Payment
+            Order And Payment
           </h1>
           <br />
           <br />

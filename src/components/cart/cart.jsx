@@ -4,7 +4,7 @@ import { CartHeader } from "./cartHeader";
 import { CartList } from "./cartList";
 import { TotalCart } from "./totalCart";
 import ExamplesNavbarGoods from "components/Navbars/ExamplesNavbarGoods";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import LandingPageHeader from "components/Headers/LandingPageHeader4.js";
 import SectionDark from "views/MainPage/SectionDark";
 import CheckOut from "views/examples/CheckOut";
 

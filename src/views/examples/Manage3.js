@@ -3,9 +3,10 @@ import React from "react";
 import { Container, Row, Col, Button } from "reactstrap";
 
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import LandingPageHeader from "components/Headers/LandingPageHeader6.js";
 import DemoFooter from "components/Footers/DemoFooter.js";
 import SectionDark from "views/MainPage/SectionDark";
+import { useState, useEffect } from "react";
 
 function Manage3() {
   document.documentElement.classList.remove("nav-open");
@@ -15,6 +16,7 @@ function Manage3() {
       document.body.classList.remove("profile-page");
     };
   });
+
   return (
     <>
       <ExamplesNavbar />
@@ -39,61 +41,15 @@ function Manage3() {
                   style={{ marginLeft: "auto", marginRight: "auto" }}
                 >
                   <tr bgcolor={"whitesmoke"}>
-                    <th></th>
-                    <th>아이디</th>
+                    <th>수령인</th>
+                    <th>연락처</th>
                     <th>상품 정보</th>
-                    <th>
-                      상품 금액{"("}수량{")"}
-                    </th>
+
+                    <th>총 금액</th>
+                    <th>주소</th>
+                    <th>상세주소</th>
                     <th>결제 상태</th>
                     <th>배송 상태</th>
-                    <th>특이사항</th>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type="checkbox" />
-                    </td>
-                    <td>
-                      <b>chanik1119</b>
-                    </td>
-                    <td>
-                      <b>프라이탁 가방</b>
-                    </td>
-                    <td>
-                      <b>120,000(1개)</b>
-                    </td>
-                    <td>
-                      <b>결제 완료</b>
-                    </td>
-                    <td>
-                      <b>배송 중</b>
-                    </td>
-                    <td>
-                      <b></b>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <input type="checkbox" />
-                    </td>
-                    <td>
-                      <b>suminpark</b>
-                    </td>
-                    <td>
-                      <b>파타고니아 집업</b>
-                    </td>
-                    <td>
-                      <b>150,000(1개)</b>
-                    </td>
-                    <td>
-                      <b>결제 완료</b>
-                    </td>
-                    <td>
-                      <b>배송 완료</b>
-                    </td>
-                    <td>
-                      <b></b>
-                    </td>
                   </tr>
                 </table>
                 <Button
