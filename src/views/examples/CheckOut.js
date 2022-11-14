@@ -28,7 +28,6 @@ function CheckOut() {
   // 팝업창 상태 관리
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [addr, setAddr] = useState("");
-  // const [pay, setPay] = useState(0);
 
   // 팝업창 열기
   const openPostCode = () => {

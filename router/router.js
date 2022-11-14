@@ -187,7 +187,7 @@ router.post("/login-page", function (request, res) {
 });
 
 // 배송지 라우터
-router.post("/CheckOut", function (request, response) {
+router.post("/CheckOut", function (request) {
   console.log("배송정보 라우터");
   let o_mem = request.body.o_mem;
   let o_tel = request.body.o_tel;
@@ -199,12 +199,13 @@ router.post("/CheckOut", function (request, response) {
   console.log("배송지:" + o_adr, o_adr2);
 
   let sql = "insert into tbl_order values(?,?,?,?)";
-  conn.query(sql, [o_mem, o_tel, o_adr, o_adr2], function (err, rows) {
+  conn.query(sql, [o_mem, o_tel, o_adr, o_adr2], function (err) {
     if (!err) {
       console.log("정보 입력 성공");
     } else {
       console.log("실패" + err);
       console.log("정보를 다시 확인해주세요");
+      alert("정보를 다시 확인해 주세요");
     }
   });
 });
