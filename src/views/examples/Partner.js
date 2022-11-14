@@ -51,7 +51,7 @@ function LandingPage3() {
             <Row>
               <Col className="ml-auto mr-auto" md="6">
                 <Card className="card-profile card-plain">
-                  <CardBody>
+                  <CardBody style={{ width: "650px" }}>
                     <p>
                       <b>
                         안녕하세요 GAIA의 서은유입니다!
