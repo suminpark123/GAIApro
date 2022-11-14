@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 import { useRef } from "react";
 import { useCallback } from "react";
 import axios from "axios";
+import Reviewsu from "./리뷰";
 
 export const Detail = ({ convertPrice, cart, setCart }) => {
   const { id } = useParams();
@@ -69,23 +70,20 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
   function back() {
     history.push("/Product");
   }
-
+  const [te, sette] = useState("");
   const [resu, setResu] = useState([]);
-
+  const [users, setUsers] = useState([]);
+  const [reuser, setreuser] = useState("");
+  const [ck, setCk] = useState([]);
   // 추가
   const handleReview = (e) => {
-    let test = "";
-    // form태그가 다른 페이지로 이동시키지 않도록 방지
     e.preventDefault();
     console.log("handleLogin!");
-    //console.log(document.getElementById("userId").value + "test");
-    //axios.post(보낼위치, 보낼데이터)
 
     getProducts().then((data) => {
       console.log(data);
-      console.log("상품의 id값:" + parseInt(id));
+      // console.log("상품의 id값:" + parseInt(id));
       setResu(data.data.products);
-      //test = data.data.products[0].id;
     });
 
     axios
@@ -104,6 +102,52 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
         console.log("데이터실패");
       });
   };
+
+  useEffect(function () {
+    setreuser(localStorage.getItem("id"));
+    axios
+      .post("http://localhost:3007/review2", {
+        id: localStorage.getItem("id"),
+      })
+      .then((result) => {
+        //console.log("데이터셩공", result.data.result);
+        console.log("액시오스성공2", result.data.result);
+        // setCk(result.data.result[0].p.id);
+        // localStorage.setItem("id", result.data.result);
+        // setName(result.data.id + "님 환영");
+        // 여긴지우기 금지
+      })
+      .catch(() => {
+        console.log("데이터실패");
+      });
+  }, []);
+
+  useEffect(function () {
+    // console.log("객체상품:" + parseInt(id));
+    // console.log("id값:" + ck);
+    axios
+      .post("http://localhost:3007/review3", {})
+      .then((result) => {
+        console.log("액시오스성공3", result.data.result);
+        // if (parseInt(id) == 1) {
+        setUsers(result.data.result);
+        // }
+      })
+      .catch(() => {
+        console.log("데이터실패");
+      });
+  }, []);
+
+  function Protest(e) {
+    e.preventDefault();
+    if (localStorage.getItem("id") == undefined) {
+      alert("로그인 해주세요");
+    }
+    // else {
+    //   const nu = parseInt(id);
+    //   window.location.replace(`/Product/${nu}`);
+    // }
+  }
 
   return (
     product && (
@@ -198,24 +242,40 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
         </main>
         <div style={{ height: "200px" }}></div>
         {/* 추가 */}
-        <form className="register-form" onSubmit={handleReview}>
-          <div
-            style={{
-              display: "flex",
-              position: "absolute",
-              marginLeft: "450px",
-            }}
-          >
-            <div style={{ color: "red" }}>id</div>
-            <textarea
-              cols="70"
-              rows="5"
-              placeholder="입력하세요"
-              id="userReview"
-            ></textarea>
-            <button type="submit">제출</button>
+        <div className="section text-center">
+          <form className="register-form" onSubmit={handleReview}>
+            <div
+              style={{
+                display: "flex",
+
+                marginLeft: "450px",
+              }}
+            >
+              <div style={{ color: "red" }}>{reuser}</div>
+              <textarea
+                cols="70"
+                rows="5"
+                placeholder="입력하세요"
+                id="userReview"
+              ></textarea>
+              <button type="submit" onClick={Protest}>
+                제출
+              </button>
+            </div>
+          </form>
+          <div style={{ height: "1400px" }}>
+            {users.map((c) => {
+              return (
+                <Reviewsu
+                  // key={c.p_seq}
+                  p_id={c.p_id}
+                  m_id={c.m_id}
+                  text={c.text}
+                />
+              );
+            })}
           </div>
-        </form>
+        </div>
       </>
     )
   );
