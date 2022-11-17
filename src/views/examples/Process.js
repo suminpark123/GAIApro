@@ -19,7 +19,7 @@ import {
 
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader1.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
+
 import SectionDark from "views/MainPage/SectionDark";
 import ApexCharts from "apexcharts";
 import ReactApexChart from "react-apexcharts";
@@ -28,17 +28,17 @@ import $ from "jquery";
 import doucment from "jquery";
 import { readBuilderProgram } from "typescript";
 import { Link } from "react-router-dom";
-import SuminModal from "./랜딩페이지수민/영상모달";
-import Examplesu1 from "./랜딩페이지수민/그래프모달1";
-import Examplesu2 from "./랜딩페이지수민/그래프모달2";
-import Examplesu3 from "./랜딩페이지수민/그래프모달3";
-import Examplesu4 from "./랜딩페이지수민/그래프모달4";
-import Examplesu5 from "./랜딩페이지수민/그래프모달5";
-import Examplesu6 from "./랜딩페이지수민/그래프모달6";
-import Examplesu0 from "./랜딩페이지수민/그래프모달0";
-import ScrollToTop from "./content/스크롤이벤트";
+import SuminModal from "./Modal/영상모달";
+import Examplesu1 from "./Modal/그래프모달1";
+import Examplesu2 from "./Modal/그래프모달2";
+import Examplesu3 from "./Modal/그래프모달3";
+import Examplesu4 from "./Modal/그래프모달4";
+import Examplesu5 from "./Modal/그래프모달5";
+import Examplesu6 from "./Modal/그래프모달6";
+import Examplesu0 from "./Modal/그래프모달0";
+import ScrollToTop from "./Scroll/스크롤이벤트";
 
-import useScrollCount from "./커스텀훅/useScrollCount";
+import useScrollCount from "./Scroll/useScrollCount";
 
 function LandingPage() {
   document.documentElement.classList.remove("nav-open");
@@ -49,21 +49,6 @@ function LandingPage() {
     };
   });
 
-  // 추가 스크롤
-
-  // let mainText = document.getElementsByClassName("catetop");
-
-  // window.addEventListener("scroll", function () {
-  //   let value = this.window.scrollY;
-  //   console.log("scrolly", value);
-
-  //   if (value > 400) {
-  //     mainText.style.animation = "scale 3s forwards";
-  //   }
-  // });
-  // 추가완
-
-  // 추가 카운트
   const FIGURE_ITEMS = [
     {
       title: "예시",
@@ -77,7 +62,6 @@ function LandingPage() {
     0: useScrollCount(322),
   };
 
-  // 추가완
   const [state2, setState2] = useState({
     series: [
       {
@@ -127,12 +111,6 @@ function LandingPage() {
     },
   });
 
-  // const E = ["가나다라"];
-  // // const animatedImage = useScrollClipPath();
-  // const animatedItem = {
-  //   0: useScrollClipPath("left", 1, 0.5),
-  // };
-
   return (
     <>
       <ScrollToTop />
@@ -155,20 +133,8 @@ function LandingPage() {
                   </div>
                 </h2>
                 <br></br>
-                {/* {E.map((item, index) => (
-                  <div key={item} {...animatedItem[index]}>
-                    <h5 className="description">
-                      GAIA에서 알려주는 올바른 분리수거방법으로 오늘의 지구를
-                      지켜주세요!
-                      <br />
-                      우리는 아직 배울 것이 많고, 다음 세대에 가르쳐야 할 것도
-                      많으니까요.
-                    </h5>
-                  </div>
-                ))} */}
               </Col>
             </Row>
-            {/* 팀장님 파트 */}
             <Row>
               <Col className="ml-auto mr-auto" md="3">
                 <Card className="card-profile card-plain">
@@ -186,8 +152,13 @@ function LandingPage() {
                   <CardBody>
                     <br />
                     <p>
-                      <b style={{fontSize:"20px", margin:"auto",letterSpacing:"1px"}}>
-                       
+                      <b
+                        style={{
+                          fontSize: "20px",
+                          margin: "auto",
+                          letterSpacing: "1px",
+                        }}
+                      >
                         안녕하세요 GAIA의 팀장 박수민입니다. 지구 온난화로 인한
                         광범위한 변화와 생태계 파괴, 그리고 대다수 기업들의
                         비즈니스가 환경 문제의 일부임을 알게 된 후부터 저희
@@ -206,8 +177,6 @@ function LandingPage() {
               className="SuminMain"
               style={{ marginRight: "150px", marginLeft: "150px" }}
             >
-              {/* <div className="suminCard" style={{ display: "flex" }}> */}
-              {/* 대시보드 1의 내용 */}
               <Row>
                 <Col
                   className="ml-auto mr-auto"
@@ -244,7 +213,6 @@ function LandingPage() {
                 </Col>
               </Row>
 
-              {/* 대시보드 2의 내용 */}
               <Row>
                 <Col className="ml-auto mr-auto" lg="6">
                   <div>
@@ -363,10 +331,6 @@ function LandingPage() {
                   </div>
                 </Col>
               </Row>
-              {/* 카드추가완료 */}
-              {/* 카드추가 */}
-
-              {/* 대시보드 3,4의 내용 */}
               <Row>
                 <Col
                   className="ml-auto mr-auto"
@@ -446,7 +410,6 @@ function LandingPage() {
                 </Col>
               </Row>
             </div>
-            {/* 노강민 파트 */}
             <Row style={{ marginTop: "100px" }}>
               <Col className="ml-auto mr-auto" md="6">
                 <Card className="card-profile card-plain">
@@ -488,7 +451,6 @@ function LandingPage() {
               className="SuminMain"
               style={{ marginRight: "150px", marginLeft: "150px" }}
             >
-              {/* 대시보드 5의 내용*/}
               <Row>
                 <Col className="ml-auto mr-auto" lg="6">
                   <Card
@@ -558,8 +520,6 @@ function LandingPage() {
                   </Card>
                 </Col>
               </Row>
-
-              {/* 대시보드 6의 내용 */}
               <Row>
                 <Col className="ml-auto mr-auto" lg="12">
                   <Card
@@ -581,16 +541,10 @@ function LandingPage() {
                   </Card>
                 </Col>
               </Row>
-
-              {/* </div> */}
-              {/* 카드추가 */}
-
-              {/* 카드추가완료 */}
             </div>
           </Container>
         </div>
       </div>
-
       <SectionDark />
     </>
   );

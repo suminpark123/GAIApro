@@ -1,33 +1,10 @@
-/*!
-
-=========================================================
-* Paper Kit React - v1.3.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/paper-kit-react
-
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/paper-kit-react/blob/main/LICENSE.md)
-
-* Coded by Creative Tim
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-*/
 import React from "react";
-import Customer from "./회원관리 copy";
+import Customer from "./회원정보랜딩";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-// reactstrap components
-import { Container, Row, Col, Button } from "reactstrap";
-
-// core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader6.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 import SectionDark from "views/MainPage/SectionDark";
 
 function Manages1() {

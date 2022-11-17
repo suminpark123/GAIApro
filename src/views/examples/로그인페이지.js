@@ -2,38 +2,22 @@ import { React, useRef } from "react";
 import PassModal from "./아이디비번찾기모달";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import {
-  Button,
-  Card,
-  Form,
-  Input,
-  Container,
-  Row,
-  Col,
-  NavbarBrand,
-} from "reactstrap";
+import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
 function LoginP() {
   const idRef = useRef();
   const pwRef = useRef();
   const history = useHistory();
   const handleLogin = (e) => {
-    // form태그가 다른 페이지로 이동시키지 않도록 방지
     e.preventDefault();
     console.log("handleLogin!");
-    //console.log(document.getElementById("userId").value + "test");
-    //axios.post(보낼위치, 보낼데이터)
     axios
       .post("http://localhost:3007/login-page", {
         id: document.getElementById("userId").value,
-        // like: likeRef.current.value,
         pw: document.getElementById("userPw").value,
-        // add: addRef.current.value,
       })
       .then((result) => {
-        //console.log("데이터셩공", result.data.result);
         console.log("아이디", result.data.result);
         localStorage.setItem("id", result.data.result);
-        // setName(result.data.id + "님 환영");
         history.push("/index");
       })
       .catch(() => {
@@ -52,7 +36,6 @@ function LoginP() {
           boxSizing: "border-box",
         }}
       >
-        {/* 창추가 */}
         <div className="filter" />
         <Container style={{ width: "100%", height: "100vh" }}>
           <Row>
@@ -105,12 +88,7 @@ function LoginP() {
                   </Button>
                 </div>
                 <br></br>
-                <Form
-                  onSubmit={handleLogin}
-                  className="register-form"
-                  // action="http://localhost:3007/login-page"
-                  // method="post"
-                >
+                <Form onSubmit={handleLogin} className="register-form">
                   <div style={{ display: "flex" }}>
                     <label
                       style={{
@@ -164,7 +142,7 @@ function LoginP() {
                   </div>
                   <br />
                   <br></br>
-                  {/* 추가3 */}
+
                   <Row>
                     <Col>
                       <Button
@@ -196,7 +174,6 @@ function LoginP() {
             </Col>
           </Row>
         </Container>
-        {/* 추가완 */}
       </div>
       <div
         className="right"

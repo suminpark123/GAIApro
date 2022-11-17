@@ -1,12 +1,11 @@
 import styles from "./main.module.css";
 import { useEffect } from "react";
-import { EventBanner } from "../eventBanner/eventBanner";
 import { Product } from "../products/product";
 import { getProducts } from "../../service/fetcher";
 import ExamplesNavbarGoods from "components/Navbars/ExamplesNavbarGoods";
 import SectionDark from "views/MainPage/SectionDark";
 import LandingPageHeader from "components/Headers/LandingPageHeader5";
-import ToTheTop from "views/examples/content/스크롤이벤트2";
+import ToTheTop from "views/examples/Scroll/스크롤이벤트2";
 
 export const Main = ({ convertPrice, products, setProducts }) => {
   const sortProduct = (type) => {

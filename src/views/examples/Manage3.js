@@ -4,7 +4,6 @@ import { Container, Row, Col, Button } from "reactstrap";
 
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader6.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 import SectionDark from "views/MainPage/SectionDark";
 import { useState, useEffect } from "react";
 import Deliver from "./Manage3 copy";

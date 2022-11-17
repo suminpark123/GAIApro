@@ -13,10 +13,8 @@ function IndexHeader() {
           <Container>
             <div className="title-brand">
               <h4 className="presentation-title">GAIA</h4>
-              {/* 제목 작성 */}
             </div>
             <h2 className="presentation-subtitle text-center"></h2>
-            {/* 내용 작성 */}
           </Container>
         </div>
       </div>

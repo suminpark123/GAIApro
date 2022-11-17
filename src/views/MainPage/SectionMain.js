@@ -1,7 +1,6 @@
 import React from "react";
-import Slider from "nouislider";
-import useScrollFadeIn from "views/examples/커스텀훅/useScrollFadeIn";
-import ScrollToTop from "views/examples/content/스크롤이벤트";
+import useScrollFadeIn from "views/examples/Scroll/useScrollFadeIn";
+import ScrollToTop from "views/examples/Scroll/스크롤이벤트";
 import { Container, Row, Col, Card, CardBody, CardFooter } from "reactstrap";
 
 function Main1() {

@@ -3,24 +3,14 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../service/fetcher";
 import { useHistory } from "react-router-dom";
-import { useRef } from "react";
-import { useCallback } from "react";
 import axios from "axios";
-import Reviewsu from "./리뷰";
-
+import ScrollToTop from "views/examples/Scroll/스크롤이벤트";
+import React from "react";
 export const Detail = ({ convertPrice, cart, setCart }) => {
   const { id } = useParams();
   const [product, setProduct] = useState({});
   const [count, setCount] = useState(1);
-
-  // 추가
-  // const textRef = useRef();
-  // const handleResizeHeight = useCallback(() => {
-  //   textRef.current.style.height = textRef.current.scrollHeight + "px";
-  // }, []);
-
   const history = useHistory();
-  // 상세페이지에서 물건 수량 조절
   const handleQuantity = (type) => {
     if (type === "plus") {
       setCount(count + 1);
@@ -29,8 +19,6 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       setCount(count - 1);
     }
   };
-
-  // 장바구니에 중복된 물건을 담을 때 사용
   const setQuantity = (id, quantity) => {
     const found = cart.filter((el) => el.id === id)[0];
     const idx = cart.indexOf(found);
@@ -44,7 +32,6 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
     };
     setCart([...cart.slice(0, idx), cartItem, ...cart.slice(idx + 1)]);
   };
-
   const handleCart = () => {
     const cartItem = {
       id: product.id,
@@ -58,7 +45,6 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
     if (found) setQuantity(cartItem.id, found.quantity + count);
     else setCart([...cart, cartItem]);
   };
-
   useEffect(() => {
     getProducts().then((data) => {
       setProduct(
@@ -66,7 +52,6 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
       );
     });
   }, [id, product.price]);
-
   function back() {
     history.push("/Product");
   }
@@ -75,17 +60,15 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
   const [users, setUsers] = useState([]);
   const [reuser, setreuser] = useState("");
   const [ck, setCk] = useState([]);
-  // 추가
+
   const handleReview = (e) => {
     e.preventDefault();
     console.log("handleLogin!");
-
     getProducts().then((data) => {
       console.log(data);
-      // console.log("상품의 id값:" + parseInt(id));
+
       setResu(data.data.products);
     });
-
     axios
       .post("http://localhost:3007/review", {
         review: document.getElementById("userReview").value,
@@ -93,16 +76,16 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
         suproduct: parseInt(id),
       })
       .then((result) => {
-        //console.log("데이터셩공", result.data.result);
         console.log("액시오스성공", result.data.result);
         localStorage.setItem("id", result.data.result);
-        // setName(result.data.id + "님 환영");
       })
       .catch(() => {
         console.log("데이터실패");
       });
+    if (localStorage.getItem("id") != undefined) {
+      window.location.replace(`/Product/${parseInt(id)}`);
+    }
   };
-
   useEffect(function () {
     setreuser(localStorage.getItem("id"));
     axios
@@ -110,48 +93,67 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
         id: localStorage.getItem("id"),
       })
       .then((result) => {
-        //console.log("데이터셩공", result.data.result);
         console.log("액시오스성공2", result.data.result);
-        // setCk(result.data.result[0].p.id);
-        // localStorage.setItem("id", result.data.result);
-        // setName(result.data.id + "님 환영");
-        // 여긴지우기 금지
       })
       .catch(() => {
         console.log("데이터실패");
       });
   }, []);
-
   useEffect(function () {
-    // console.log("객체상품:" + parseInt(id));
-    // console.log("id값:" + ck);
     axios
-      .post("http://localhost:3007/review3", {})
+      .post("http://localhost:3007/review3", {
+        rev: parseInt(id),
+      })
       .then((result) => {
         console.log("액시오스성공3", result.data.result);
-        // if (parseInt(id) == 1) {
         setUsers(result.data.result);
-        // }
       })
       .catch(() => {
         console.log("데이터실패");
       });
   }, []);
-
-  function Protest(e) {
-    e.preventDefault();
+  function Protest() {
     if (localStorage.getItem("id") == undefined) {
       alert("로그인 해주세요");
     }
-    // else {
-    //   const nu = parseInt(id);
-    //   window.location.replace(`/Product/${nu}`);
-    // }
   }
-
+  class Reviewsu extends React.Component {
+    render() {
+      return (
+        <div style={{ width: "1500px", height: "150px" }}>
+          <p>
+            <div
+              style={{
+                width: "150px",
+                height: "50px",
+                marginLeft: "380px",
+                background: "#19CE60",
+                color: "white",
+                borderRadius: "5px",
+              }}
+            >
+              {this.props.m_id}
+            </div>
+            <div
+              style={{
+                width: "600px",
+                height: "80px",
+                marginLeft: "400px",
+                background: "white",
+                borderRadius: "5px",
+              }}
+            >
+              {this.props.text}
+            </div>
+          </p>
+        </div>
+      );
+    }
+  }
   return (
     product && (
       <>
+        <ScrollToTop />
         <main className={styles.main}>
           <section className={styles.product}>
             <img
@@ -173,13 +175,10 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
                 <span className={styles.unit}>원</span>
               </span>
             </div>
-
             <div className={styles.delivery}>
               <p>택배배송 / 무료배송</p>
             </div>
-
             <div className={styles.line}></div>
-
             <div className={styles.amount}>
               <img
                 className={styles.minus}
@@ -187,11 +186,9 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
                 alt="minus"
                 onClick={() => handleQuantity("minus")}
               />
-
               <div className={styles.count}>
                 <span>{count}</span>
               </div>
-
               <img
                 className={styles.plus}
                 src={process.env.PUBLIC_URL + "/images/icon-plus-line.svg"}
@@ -199,14 +196,11 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
                 onClick={() => handleQuantity("plus")}
               />
             </div>
-
             <div className={styles.line}></div>
-
             <div className={styles.sum}>
               <div>
                 <span className={styles.sum_price}>총 상품 금액</span>
               </div>
-
               <div className={styles.total_info}>
                 <span className={styles.total}>
                   총 수량 <span className={styles.total_count}>{count}개</span>
@@ -217,7 +211,6 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
                 </span>
               </div>
             </div>
-
             <div className={styles.btn}>
               <button
                 className={styles.btn_buy}
@@ -241,38 +234,47 @@ export const Detail = ({ convertPrice, cart, setCart }) => {
           </section>
         </main>
         <div style={{ height: "200px" }}></div>
-        {/* 추가 */}
         <div className="section text-center">
           <form className="register-form" onSubmit={handleReview}>
             <div
               style={{
                 display: "flex",
-
                 marginLeft: "450px",
               }}
             >
-              <div style={{ color: "red" }}>{reuser}</div>
+              <div
+                style={{
+                  color: "black",
+                  fontSize: "20px",
+                  marginTop: "40px",
+                }}
+              >
+                {reuser}
+              </div>
               <textarea
                 cols="70"
                 rows="5"
                 placeholder="입력하세요"
                 id="userReview"
               ></textarea>
-              <button type="submit" onClick={Protest}>
-                제출
+              <button
+                type="submit"
+                onClick={Protest}
+                style={{
+                  borderRadius: "5px",
+                  background: "#19CE60",
+                  color: "white",
+                }}
+              >
+                댓글쓰기
               </button>
             </div>
           </form>
+          <br></br>
+          <br></br>
           <div style={{ height: "1400px" }}>
             {users.map((c) => {
-              return (
-                <Reviewsu
-                  // key={c.p_seq}
-                  p_id={c.p_id}
-                  m_id={c.m_id}
-                  text={c.text}
-                />
-              );
+              return <Reviewsu m_id={c.m_id} text={c.text} />;
             })}
           </div>
         </div>

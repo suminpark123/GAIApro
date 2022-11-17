@@ -26,8 +26,6 @@ export default function ProductCards() {
   };
   return (
     <section className="h-100">
-      {/* style={{ backgroundColor: "#eee" }} */}
-      {/* <MDBContainer className="py-5 h-100"> */}
       <MDBRow className="justify-content-center align-items-center h-100">
         <MDBCol md="10">
           <MDBCard className="rounded-3 mb-4">
@@ -55,17 +53,13 @@ export default function ProductCards() {
                   xl="2"
                   className="d-flex align-items-center justify-content-around"
                 >
-                  <button
-                    // color="link"
-                    // className="px-2"
-                    onClick={() => handleQuantity("minus")}
-                  >
+                  <button onClick={() => handleQuantity("minus")}>
                     <MDBIcon icon="minus" />
                   </button>
                   <div className={count}>
                     <span>{count}</span>
                   </div>
-                  {/* <MDBInput min={0} defaultValue={2} type="number" size="sm" /> */}
+
                   <button
                     color="link"
                     className="px-2"
@@ -140,7 +134,6 @@ export default function ProductCards() {
           </MDBCard>
         </MDBCol>
       </MDBRow>
-      {/* </MDBContainer> */}
     </section>
   );
 }

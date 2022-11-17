@@ -1,19 +1,9 @@
 import React, { useState } from "react";
 import "assets/css/CheckOut.css";
-import {
-  Button,
-  Row,
-  Card,
-  Col,
-  CardFooter,
-  CardBody,
-  Container,
-} from "reactstrap";
+import { Button, Row, Card, Col } from "reactstrap";
 import PopupDom from "./PopupDom";
 import PopupPostCode from "./PopupPostCode";
 import { useHistory } from "react-router-dom";
-import { useEffect } from "react";
-import PassModal2 from "./결제로그인모달";
 
 function CheckOut() {
   document.documentElement.classList.remove("nav-open");

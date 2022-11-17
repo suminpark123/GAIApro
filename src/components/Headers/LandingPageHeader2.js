@@ -1,6 +1,5 @@
 import React from "react";
-import { Button, Container } from "reactstrap";
-import { Link } from "react-router-dom";
+
 function LandingPageHeader() {
   let pageHeader = React.createRef();
   React.useEffect(() => {

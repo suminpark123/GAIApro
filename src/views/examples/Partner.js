@@ -1,19 +1,12 @@
 import React from "react";
-import Company1 from "./content/Company1";
-// import Pagination from 'react-bootstrap/Pagination'
+import Company1 from "./CompanyStory/Company1";
 import { Pagination, PaginationItem, PaginationLink } from "reactstrap";
 import { Card, CardBody, CardFooter, Container, Row, Col } from "reactstrap";
-// core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader3.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 import SectionDark from "views/MainPage/SectionDark";
 import { Link } from "react-router-dom";
-//
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import { nodeName } from "jquery";
-import { First } from "react-bootstrap/esm/PageItem";
+
 function LandingPage3() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {

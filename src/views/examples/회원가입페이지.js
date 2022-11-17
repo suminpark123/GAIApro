@@ -1,18 +1,6 @@
 import { React, useRef } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
-import { useState } from "react";
-import { useEffect } from "react";
-import {
-  Button,
-  Card,
-  Form,
-  Input,
-  Container,
-  Row,
-  Col,
-  NavbarBrand,
-} from "reactstrap";
+import { Button, Card, Form, Input, Container, Row, Col } from "reactstrap";
 
 function RegisterP() {
   return (
@@ -27,7 +15,6 @@ function RegisterP() {
           boxSizing: "border-box",
         }}
       >
-        {/* 창추가 */}
         <div className="filter" />
         <Container style={{ width: "100%", height: "100vh" }}>
           <Row>
@@ -260,7 +247,6 @@ function RegisterP() {
                           name="gender"
                           value="남"
                           style={{
-                            //   marginLeft: "15px",
                             background: "#EAEAEA",
                             accentColor: "gray",
                           }}
@@ -273,7 +259,6 @@ function RegisterP() {
                           name="gender"
                           value="여"
                           style={{
-                            //   marginLeft: "80px",
                             background: "#EAEAEA",
                             accentColor: "gray",
                           }}
@@ -282,7 +267,7 @@ function RegisterP() {
                       </div>
                     </div>
                   </div>
-                  {/* 추가3 */}
+
                   <Button
                     block
                     className="btn-round"
@@ -297,7 +282,6 @@ function RegisterP() {
             </Col>
           </Row>
         </Container>
-        {/* 추가완 */}
       </div>
       <div
         className="right"

@@ -1,35 +1,15 @@
-
-
 import React, { useState } from "react";
 import ReactApexChart from "react-apexcharts";
 
-import "./Chanik.css";
-// reactstrap components
-import {
-  Button,
-  Card,
-  CardBody,
-  CardFooter,
-  CardTitle,
-  Form,
-  Input,
-  InputGroupAddon,
-  InputGroupText,
-  InputGroup,
-  Container,
-  Row,
-  Col,
-} from "reactstrap";
+import { Card, CardBody, CardFooter, Container, Row, Col } from "reactstrap";
 
-// core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader2.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 import SectionDark from "views/MainPage/SectionDark";
 import StaticExample from "./StaticExample";
 import StaticExample1 from "./StaticExample1";
-import useScrollFadeIn from "./커스텀훅/useScrollFadeIn";
-import ScrollToTop from "./content/스크롤이벤트";
+import useScrollFadeIn from "./Scroll/useScrollFadeIn";
+import ScrollToTop from "./Scroll/스크롤이벤트";
 
 function LandingPage2() {
   const [state, setState] = useState({
@@ -126,7 +106,7 @@ function LandingPage2() {
         bar: {
           borderRadius: 10,
           dataLabels: {
-            position: "top", // top, center, bottom
+            position: "top",
           },
         },
       },
@@ -667,65 +647,13 @@ function LandingPage2() {
                 </div>
               </Col>
               <Col md="3">
-                {/* <div className="info">
-                  <div className="icon icon-info">
-                    <img
-                      src={require("assets/img/icons/free-icon-plastic-bottle-3300605.png")}
-                    />
-                  </div>
-                  <div className="description">
-                    <h5 className="info-title" style={{ marginTop: "10px" }}>
-                      {"<"}폐페트병{">"}
-                    </h5>
-                    <p className="description" style={{ marginBottom: "30px" }}>
-                      내용물을 비워준 다음,
-                      <br />
-                      겉에 있는 라벨을 꼭 제거해 주세요!
-                      <br />
-                      최대한 찌그러준 다음{" "}
-                      <u>
-                        <strong>'투명'</strong>
-                      </u>
-                      과{" "}
-                      <u>
-                        <strong>'유색'</strong>
-                      </u>
-                      을
-                      <br />
-                      분리해 지정된 배출함에 넣어주세요.
-                    </p>
-                  </div>
-                </div> */}
                 {chanchan.map((item, index) => (
                   <div key={item} {...animatedItem[index]}>
                     {item}
                   </div>
                 ))}
               </Col>
-
               <Col md="3">
-                {/* <div className="info">
-                  <div className="icon icon-info">
-                    <img
-                      src={require("assets/img/icons/free-icon-delivery-box-5790463.png")}
-                    />
-                  </div>
-                  <div className="description">
-                    <h5 className="info-title" style={{ marginTop: "10px" }}>
-                      {"<"}종이 상자{">"}
-                    </h5>
-                    <p>
-                      테이프 등 다른 재질은 제거해 주세요.
-                      <br />
-                      또한 이물질이 혼합되지 않도록
-                      <br />
-                      <u>
-                        <strong>'접어서'</strong>
-                      </u>{" "}
-                      배출해 주세요!
-                    </p>
-                  </div>
-                </div> */}
                 {chanchan2.map((item, index) => (
                   <div key={item} {...animatedItem2[index]}>
                     {item}
@@ -733,31 +661,6 @@ function LandingPage2() {
                 ))}
               </Col>
               <Col md="3">
-                {/* <div className="info">
-                  <div className="icon icon-info">
-                    <img
-                      src={require("assets/img/icons/free-icon-plastic-bag-6588425.png")}
-                    />
-                  </div>
-                  <div className="description">
-                    <h5 className="info-title" style={{ marginTop: "10px" }}>
-                      {"<"}비닐류{">"}
-                    </h5>
-                    <p>
-                      음식물과 이물질이 묻었다면
-                      <br />
-                      물로{" "}
-                      <u>
-                        <strong>'3번'</strong>
-                      </u>{" "}
-                      헹궈 잔여물을 없애주세요!
-                      <br />
-                      이물질 제거가 어렵다면
-                      <br />
-                      종량제봉투에 버려주세요.
-                    </p>
-                  </div>
-                </div> */}
                 {chanchan3.map((item, index) => (
                   <div key={item} {...animatedItem3[index]}>
                     {item}
@@ -765,30 +668,6 @@ function LandingPage2() {
                 ))}
               </Col>
               <Col md="3">
-                {/* <div className="info">
-                  <div className="icon icon-info">
-                    <img
-                      src={require("assets/img/icons/free-icon-food-container-3765881.png")}
-                    />
-                  </div>
-                  <div className="description">
-                    <h5 className="info-title" style={{ marginTop: "10px" }}>
-                      {"<"}스티로폼류{">"}
-                    </h5>
-                    <p>
-                      비닐, 종이와 마찬가지로
-                      <br />
-                      이물질, 테이프 등을 없애주세요!
-                      <br />
-                      만약, 많이 묻었다면
-                      <br />
-                      <u>
-                        <strong>'쪼개서'</strong>
-                      </u>{" "}
-                      종량제봉투에 버려주세요.
-                    </p>
-                  </div>
-                </div> */}
                 {chanchan4.map((item, index) => (
                   <div key={item} {...animatedItem4[index]}>
                     {item}
@@ -797,141 +676,27 @@ function LandingPage2() {
               </Col>
 
               <Col md="3">
-                {/* <div className="info">
-                  <div className="icon icon-info">
-                    <img
-                      src={require("assets/img/icons/free-icon-glass-bottle-1012833.png")}
-                    />
-                  </div>
-                  <div className="description">
-                    <h5 className="info-title" style={{ marginTop: "10px" }}>
-                      {"<"}유리병{">"}
-                    </h5>
-                    <p>
-                      병 안에 이물질을 넣지 말아 주세요!
-                      <br />
-                      거울, 도자기류, 유리 식기류는
-                      <br />
-                      유리병류가 절대 아닙니다!
-                      <br />
-                      <u>
-                        <strong>종량제봉투</strong>
-                      </u>
-                      나{" "}
-                      <u>
-                        <strong>전용 마대</strong>
-                      </u>
-                      에 버려주세요.
-                    </p>
-                  </div>
-                </div> */}
                 {chanchan5.map((item, index) => (
                   <div key={item} {...animatedItem5[index]}>
                     {item}
                   </div>
                 ))}
               </Col>
-
               <Col md="3">
-                {/* <div className="info">
-                  <div className="icon icon-info">
-                    <img
-                      src={require("assets/img/icons/free-icon-notebook-2338675.png")}
-                    />
-                  </div>
-                  <div className="description">
-                    <h5 className="info-title" style={{ marginTop: "10px" }}>
-                      {"<"}수첩 및 책자류{">"}
-                    </h5>
-                    <p>
-                      스프링 등 종이류와 다른 재질은
-                      <br />
-                      반드시 제거 후 버려주세요!
-                      <br />
-                      <u>
-                        <strong>스프링은 '따로' 배출하셔야 합니다.</strong>
-                      </u>
-                    </p>
-                  </div>
-                </div> */}
                 {chanchan6.map((item, index) => (
                   <div key={item} {...animatedItem6[index]}>
                     {item}
                   </div>
                 ))}
               </Col>
-
               <Col md="3">
-                {/* <div className="info">
-                  <div className="icon icon-info">
-                    <img
-                      src={require("assets/img/icons/free-icon-electric-appliance-7290460.png")}
-                    />
-                  </div>
-                  <div className="description">
-                    <h5 className="info-title" style={{ marginTop: "10px" }}>
-                      {"<"}폐가전제품{">"}
-                    </h5>
-                    <p>
-                      전화와 인터넷 신청만으로 가능합니다.
-                      <br />
-                      전화는{" "}
-                      <u>
-                        <strong>'1599-0903',</strong>
-                      </u>
-                      <br />
-                      인터넷 신청은{" "}
-                      <u>
-                        <strong>'www.15990903.or.kr.'</strong>
-                      </u>
-                      <br />
-                      수수료없이{" "}
-                      <u>
-                        <strong>무료</strong>
-                      </u>
-                      로 수거해간다는 점!
-                    </p>
-                  </div>
-                </div> */}
                 {chanchan7.map((item, index) => (
                   <div key={item} {...animatedItem7[index]}>
                     {item}
                   </div>
                 ))}
               </Col>
-
               <Col md="3">
-                {/* <div className="info">
-                  <div className="icon icon-info">
-                    <img
-                      src={require("assets/img/icons/free-icon-bags-5765600.png")}
-                    />
-                  </div>
-                  <div className="description">
-                    <h5 className="info-title" style={{ marginTop: "10px" }}>
-                      {"<"}일반 쓰레기{">"}
-                    </h5>
-                    <p>
-                      씻어도 이물질이{" "}
-                      <u>
-                        <strong>제거되지 않는다면</strong>
-                      </u>
-                      ,
-                      <br />
-                      쓰레기가{" "}
-                      <u>
-                        <strong>다른 재질과 혼합</strong>
-                      </u>
-                      됐다면,
-                      <br />
-                      모두{" "}
-                      <u>
-                        <strong>종량제 봉투</strong>
-                      </u>
-                      에 넣어주세요!
-                    </p>
-                  </div>
-                </div> */}
                 {chanchan8.map((item, index) => (
                   <div key={item} {...animatedItem8[index]}>
                     {item}
@@ -939,7 +704,6 @@ function LandingPage2() {
                 ))}
               </Col>
             </Row>
-
             <Row>
               <Col md="6">
                 <Card className="card-profile card-plain">

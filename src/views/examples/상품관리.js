@@ -1,18 +1,10 @@
 import React from "react";
-import Customer from "./회원관리 copy";
 import axios from "axios";
 import { useEffect, useState } from "react";
-
-// reactstrap components
-import { Container, Row, Col, Button } from "reactstrap";
-
-// core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import LandingPageHeader from "components/Headers/LandingPageHeader6.js";
-import DemoFooter from "components/Footers/DemoFooter.js";
 import SectionDark from "views/MainPage/SectionDark";
-import Customer2 from "./상품관리 copy 2";
-
+import Customer2 from "./관리자상품";
 function Manages2() {
   document.documentElement.classList.remove("nav-open");
   React.useEffect(() => {
@@ -21,9 +13,7 @@ function Manages2() {
       document.body.classList.remove("profile-page");
     };
   });
-
   const [users, setUsers] = useState([]);
-
   useEffect(function () {
     axios
       .post("http://localhost:3007/alll2")
@@ -35,7 +25,6 @@ function Manages2() {
         console.log("데이터실패");
       });
   }, []);
-
   return (
     <>
       <ExamplesNavbar />
@@ -54,7 +43,6 @@ function Manages2() {
             >
               <table border="1" width={"100%"} height={"100%"}>
                 <tr bgcolor={"whitesmoke"}>
-                  {/* <th></th> */}
                   <th>번호</th>
                   <th>상품</th>
                   <th>가격</th>
@@ -64,8 +52,8 @@ function Manages2() {
                 {users.map((c) => {
                   return (
                     <Customer2
-                      key={c.p_seq}
-                      p_seq={c.p_seq}
+                      key={c.p_id}
+                      p_id={c.p_id}
                       p_name={c.p_name}
                       p_price={c.p_price}
                       p_point={c.p_point}
@@ -82,5 +70,4 @@ function Manages2() {
     </>
   );
 }
-
 export default Manages2;
