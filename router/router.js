@@ -147,7 +147,7 @@ router.post("/login-page", function (request, res) {
   let sql = "select * from tbl_member where id =? and pw =?";
   conn.query(sql, [id, pw], function (err, rows) {
     if (rows.length > 0) {
-      console.log("로그인 성공ㄷㄷ");
+      console.log("로그인 성공");
       res.json({ result: id });
       res.end();
     } else {
