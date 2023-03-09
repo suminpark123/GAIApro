@@ -1,0 +1,8 @@
+서버실행
+pm2 start app.js --watch
+pm2 log
+pm2 kill
+
+리액트 실행
+npm i (모듈설치)
+npm start
