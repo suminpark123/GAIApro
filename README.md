@@ -16,9 +16,9 @@
 ## ScreenShots
 
 ![alt text](https://github.com/suminpark123/BICOS/blob/master/res/home.jpg)
-![alt text](https://github.com/suminpark123/GAIApro/blob/main/src/assets/img/gitimg/k-243.png)
-![alt text](https://github.com/suminpark123/GAIApro/blob/main/src/assets/img/gitimg/k-244.png)
-![alt text](https://github.com/suminpark123/GAIApro/blob/main/src/assets/img/gitimg/k-245.png)
-![alt text](https://github.com/suminpark123/GAIApro/blob/main/src/assets/img/gitimg/k-246.png)
+![alt text](https://github.com/suminpark123/GAIApro/tree/main/src/assets/img/gitimg/k-243.png)
+![alt text](https://github.com/suminpark123/GAIApro/tree/main/src/assets/img/gitimg/k-244.png)
+![alt text](https://github.com/suminpark123/GAIApro/tree/main/src/assets/img/gitimg/k-245.png)
+![alt text](https://github.com/suminpark123/GAIApro/tree/main/src/assets/img/gitimg/k-246.png)
 
 https://github.com/suminpark123/GAIApro/blob/main/src/assets/img/gitimg/k-243.png
