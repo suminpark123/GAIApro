@@ -6,7 +6,7 @@ import ExamplesNavbarGoods from "components/Navbars/ExamplesNavbarGoods";
 import SectionDark from "views/MainPage/SectionDark";
 import LandingPageHeader from "components/Headers/LandingPageHeader5";
 import ToTheTop from "views/examples/Scroll/스크롤이벤트2";
-// test
+// test 내커밋
 export const Main = ({ convertPrice, products, setProducts }) => {
   const sortProduct = (type) => {
     if (type === "recent") {
